@@ -1,4 +1,10 @@
-﻿namespace FatturazioneElettronica.IPA
+﻿//-----------------------------------------------------------------------
+// <copyright file="Ws03_OU.cs" company="Studio A&T s.r.l.">
+//     Copyright (c) Studio A&T s.r.l. All rights reserved.
+// </copyright>
+// <author>Nicogis</author>
+//-----------------------------------------------------------------------
+namespace FatturazioneElettronica.IPA
 {
     using System.Collections.Generic;
 
