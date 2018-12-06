@@ -1,10 +1,10 @@
 #### Indice delle Pubblice Amministrazioni
 
 ### Descrizione
-Libreria sviluppata in c# per interrogare i web services dell'IPA. Per maggiore dettagli visitare il sito https://www.indicepa.gov.it/documentale/n-consulta-dati.php
+Libreria sviluppata in c# per interrogare i web services dell'IPA. Per maggiore dettagli visitare il [sito iPA](https://www.indicepa.gov.it/documentale/n-consulta-dati.php)
 
 Per utilizzare i Web Services è necessario chiedere una specifica autorizzazione. 
-Occorre selezionare la voce del menu Richiedi Authorization ID e compilare la form dedicata al seguenet link: https://www.indicepa.gov.it/registr-user-ws/ws-registrazione-start.php
+Occorre selezionare la voce del menu Richiedi Authorization ID e compilare la form dedicata al seguente [link](https://www.indicepa.gov.it/registr-user-ws/ws-registrazione-start.php)
 
 ### Utilizzo
 
@@ -51,10 +51,18 @@ Occorre selezionare la voce del menu Richiedi Authorization ID e compilare la fo
 		Ws08 hh = h.Request();
 	   
 
+
 ```
 
+
+### Installazione
+```
+	PM> Install-Package StudioAT.FatturazioneElettronica.IPA -Version 1.3.0
+```
+dalla Console di Gestione Pacchetti di Visual Studio
+
 ### Requisiti
-Microsoft .NET 4.6.2
+Microsoft .NET 4.6.2 o superiore
 
 ### Licenza
 Il progetto è rilasciato sotto licenza GNU Library General Public License (LGPL).

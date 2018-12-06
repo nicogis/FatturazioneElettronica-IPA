@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>1.3.0</version>
+    <title>Fatturazione elettronica - IPA</title>
+    <authors>nicogis</authors>
+    <owners>Studio A&amp;T s.r.l.</owners>
+    <licenseUrl>https://github.com/nicogis/FatturazioneElettronica-IPA/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://nicogis.github.io/FatturazioneElettronica-IPA</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Client per web services IPA (Indice delle Pubblice Amministrazioni)</description>
+    <releaseNotes>Versione iniziale</releaseNotes>
+    <copyright>Copyright 2018</copyright>
+    <tags>IPA FatturazioneElettronica nicogis</tags>
+  </metadata>
+</package>
