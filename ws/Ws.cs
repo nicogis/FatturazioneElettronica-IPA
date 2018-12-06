@@ -130,26 +130,5 @@ namespace FatturazioneElettronica.IPA
         };
 
     }
-
-    internal static class Extensions
-    {
-        public static bool TryParseJson<T>(this string obj, out T result)
-        {
-            try
-            {
-                JsonSerializerSettings settings = new JsonSerializerSettings();
-                settings.MissingMemberHandling = MissingMemberHandling.Error;
-
-                result = JsonConvert.DeserializeObject<T>(obj);
-                return true;
-            }
-            catch
-            {
-                result = default(T);
-                return false;
-            }
-        }
-    }
-
 }
 
