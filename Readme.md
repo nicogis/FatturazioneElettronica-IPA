@@ -3,14 +3,14 @@
 ### Descrizione
 Libreria sviluppata in c# per interrogare i web services dell'IPA. Per maggiore dettagli visitare il sito https://www.indicepa.gov.it/documentale/n-consulta-dati.php
 
-Per utilizzare i Web Services è necessario chiedere una specifica autorizzazione. 
+Per utilizzare i Web Services Ã¨ necessario chiedere una specifica autorizzazione. 
 Occorre selezionare la voce del menu Richiedi Authorization ID e compilare la form dedicata al seguenet link: https://www.indicepa.gov.it/registr-user-ws/ws-registrazione-start.php
 
 ### Utilizzo
 
 ```csharp
 
-       myAuthId = "XXXXXXXX";
+                myAuthId = "XXXXXXXX";
 		
 		Ws01_SFE_CF a = new Ws01_SFE_CF("03301860524", myAuthId);
 
@@ -57,4 +57,4 @@ Occorre selezionare la voce del menu Richiedi Authorization ID e compilare la fo
 Microsoft .NET 4.6.2
 
 ### Licenza
-Il progetto è rilasciato sotto licenza GNU Library General Public License (LGPL).
+Il progetto Ã¨ rilasciato sotto licenza GNU Library General Public License (LGPL).
