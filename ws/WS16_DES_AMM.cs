@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="Ws04_SFE.cs" company="Studio A&T s.r.l.">
+// <copyright file="Ws16_DES_AMM.cs" company="Studio A&T s.r.l.">
 //     Copyright (c) Studio A&T s.r.l. All rights reserved.
 // </copyright>
 // <author>Nicogis</author>
@@ -9,27 +9,31 @@ namespace FatturazioneElettronica.IPA
     using System.Collections.Generic;
 
     /// <summary>
-    /// Questo servizio web consente di estrarre dall'iPA informazioni su tutti i Servizi di Fatturazione Elettronica associati ad un Ente specifico.
+    /// Questo servizio web consente di estrarre dall'iPA informazioni relative ad una lista di Enti.
     /// </summary>
-    public class Ws04_SFE : Ws<Ws04>
+    public class Ws16_DES_AMM : Ws<Ws16>
     {
-        public Ws04_SFE(string codAmm, string authId) : base(authId)
+        public Ws16_DES_AMM(string descr, string authId) : base(authId)
         {
-            this.CodAmm = codAmm; 
+            this.Descr = descr;
+            
         }
 
-        public new Ws04 Request()
+
+        public new Ws16 Request()
         {
-            this.AddParameters(new KeyValuePair<string, string>("COD_AMM", this.CodAmm));
+            this.AddParameters(new KeyValuePair<string, string>("DESCR", this.Descr));
             
+
             return base.Request();
         }
 
-        public string CodAmm
+        public string Descr
         {
             get;
             set;
         }
+
 
     }
 }

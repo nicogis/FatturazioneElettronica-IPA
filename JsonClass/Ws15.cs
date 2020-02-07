@@ -1,30 +1,24 @@
-﻿//-----------------------------------------------------------------------
-// <copyright file="Ws04.cs" company="Studio A&T s.r.l.">
-//     Copyright (c) Studio A&T s.r.l. All rights reserved.
-// </copyright>
-// <author>Nicogis</author>
-//-----------------------------------------------------------------------
-namespace FatturazioneElettronica.IPA
+﻿namespace FatturazioneElettronica.IPA
 {
     using Newtonsoft.Json;
     using System.Collections.Generic;
 
     /// <summary>
-    /// Questo servizio web consente di estrarre dall'iPA informazioni su tutti i Servizi di Fatturazione Elettronica associati ad un Ente specifico.
+    ///   Questo servizio web consente di estrarre dall'iPA informazioni su tutti gli uffici che sono Nodi di Smistamento Ordini associati ad un Ente specifico.
     /// </summary>
-    public partial class Ws04 : WsJson
+    public partial class Ws15 : WsJson
     {
         [JsonProperty("data")]
-        public List<DataWs04> Data { get; set; }
+        public List<DataWs15> Data { get; set; }
 
         [JsonProperty("result", Required = Required.Always)]
         public Result Result { get; set; }
     }
 
-    public partial class DataWs04
+    public partial class DataWs15
     {
         /// <summary>
-        /// Codice fiscale del servizio di fatturazione elettronica
+        /// Codice fiscale del nodo di smistamento ordini
         /// </summary>
         [JsonProperty("cf", Required = Required.Always)]
         public string Cf { get; set; }
@@ -42,16 +36,16 @@ namespace FatturazioneElettronica.IPA
         public string CodAoo { get; set; }
 
         /// <summary>
-        /// Codice Univoco dell'Ufficio di fatturazione elettronica
+        /// Codice Univoco dell'Ufficio del nodo di smistamento ordini
         /// </summary>
         [JsonProperty("cod_uni_ou", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
         public string CodUniOu { get; set; }
 
         /// <summary>
-        /// Data di inizio validità del servizio di fatturazione
+        /// Data di inizio validità del nodo di smistamento ordini
         /// </summary>
-        [JsonProperty("dat_val_canale_trasm_sfe", Required = Required.Always)]
-        public string DatValCanaleTrasmSfe { get; set; }
+        [JsonProperty("dat_val_canale_trasm_nso", Required = Required.Always)]
+        public string DatValCanaleTrasmNso { get; set; }
 
         /// <summary>
         /// Nome dell'UO
@@ -66,7 +60,7 @@ namespace FatturazioneElettronica.IPA
         public string DtVerificaCf { get; set; }
 
         /// <summary>
-        /// Stato del canale di fatturazione
+        /// Stato del canale ordini
         /// </summary>
         [JsonProperty("stato_canale", Required = Required.Always)]
         public string StatoCanale { get; set; }

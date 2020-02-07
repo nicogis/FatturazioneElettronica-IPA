@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="Ws04_SFE.cs" company="Studio A&T s.r.l.">
+// <copyright file="Ws08_AOOC.cs" company="Studio A&T s.r.l.">
 //     Copyright (c) Studio A&T s.r.l. All rights reserved.
 // </copyright>
 // <author>Nicogis</author>
@@ -8,20 +8,23 @@ namespace FatturazioneElettronica.IPA
 {
     using System.Collections.Generic;
 
+
     /// <summary>
-    /// Questo servizio web consente di estrarre dall'iPA informazioni su tutti i Servizi di Fatturazione Elettronica associati ad un Ente specifico.
+    /// Questo servizio web consente di estrarre dall'iPA informazioni su tutti gli uffici che sono Nodi di Smistamento Ordini associati ad un Ente specifico.
     /// </summary>
-    public class Ws04_SFE : Ws<Ws04>
+    public class Ws15_NSO : Ws<Ws15>
     {
-        public Ws04_SFE(string codAmm, string authId) : base(authId)
+        public Ws15_NSO(string codAmm, string authId) : base(authId)
         {
-            this.CodAmm = codAmm; 
+            this.CodAmm = codAmm;
+            
         }
 
-        public new Ws04 Request()
+        public new Ws15 Request()
         {
             this.AddParameters(new KeyValuePair<string, string>("COD_AMM", this.CodAmm));
             
+
             return base.Request();
         }
 
@@ -30,6 +33,7 @@ namespace FatturazioneElettronica.IPA
             get;
             set;
         }
+
 
     }
 }

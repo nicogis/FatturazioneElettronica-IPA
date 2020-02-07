@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "name": "WS01Response",
+    "name": "WS13Response",
     "type": "object",
     "properties": {
         "result": {
@@ -30,44 +30,47 @@
             "items": {
                 "type": "object",
                 "properties": {
+                    "domicilio_digitale": {
+                        "type": "string",
+                        "description": "Domicilio digitale"
+                    },
+                    "tipo": {
+                        "type": "string",
+                        "description": "Tipo Domicilio digitale; attualmente solo PEC"
+                    },
+                    "data_pubblicazione": {
+                        "type": "string",
+                        "description": "Data pubblicazione nuovo Domicilio digitale"
+                    },
+                    "data_cancellazione": {
+                        "type": "string",
+                        "description": "Data pubblicazione cancellazione Domicilio digitale"
+                    },
                     "cod_amm": {
                         "type": "string",
                         "description": "Codice Ente accreditato in IPA"
                     },
                     "des_amm": {
                         "type": "string",
-                        "description": "Denominazione Ente accreditato in IPA"
+                        "description": "Nome Ente "
                     },
-                    "OU": {
-                        "type": "array",
-                        "items": {
-                            "type": "object",
-                            "properties": {
-                                "des_ou": {
-                                    "type": "string",
-                                    "description": "Denominazione Unita Organizzativa"
-                                },
-                                "stato_canale": {
-                                    "type": "string",
-                                    "description": "A: Canale Attivo, V: In Fase di validazione"
-                                },
-                                "cod_uni_ou": {
-                                    "type": "string",
-                                    "description": "Codice Univoco Ufficio destinatario di Fatturazione Elettroniche"
-                                }
-                            },
-                            "required": [
-                                "des_ou",
-                                "stato_canale"
-                            ]
-                        },
-                        "minItems": 1
+                    "cod_aoo": {
+                        "type": "string",
+                        "description": "Codice AOO"
+                    },
+                    "des_aoo": {
+                        "type": "string",
+                        "description": "Nome dell'AOO"
                     }
                 },
                 "required": [
+                    "domicilio_digitale",
+                    "tipo",
+                    "data_pubblicazione",
                     "cod_amm",
                     "des_amm",
-                    "OU"
+                    "cod_aoo",
+                    "des_aoo"
                 ]
             }
         }

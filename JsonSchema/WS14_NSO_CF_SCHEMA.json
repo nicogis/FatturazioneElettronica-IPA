@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "name": "WS01Response",
+    "name": "WS14Response",
     "type": "object",
     "properties": {
         "result": {
@@ -53,15 +53,14 @@
                                 },
                                 "cod_uni_ou": {
                                     "type": "string",
-                                    "description": "Codice Univoco Ufficio destinatario di Fatturazione Elettroniche"
+                                    "description": "Codice Univoco Ufficio del Nodo Smistamento Ordini"
                                 }
                             },
                             "required": [
                                 "des_ou",
                                 "stato_canale"
                             ]
-                        },
-                        "minItems": 1
+                        }
                     }
                 },
                 "required": [

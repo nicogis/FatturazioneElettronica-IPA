@@ -87,26 +87,18 @@ namespace FatturazioneElettronica.IPA
                 JSchema schema = JSchema.Parse(result);
 
                 
-                bool valid = ws.IsValid(schema, out IList<ValidationError> errors);
+                bool valid = ws.IsValid(schema, out IList<string> errors);
 
                 if (valid)
                 {
-                    JObject test = JObject.Parse(json);
-                    if (test["data"] == null)
-                    {
-                        JObject o = JObject.FromObject(new
-                        {
-                            result = JsonConvert.DeserializeObject<Result>(json, Converter.Settings)
-                        });
-
-                        json = o.ToString();
-                    }
-
                     return Ws<T>.FromJson(json);
                 }
                 else
                 {
-                    throw new Exception("Json non valido con lo schema indicato!");
+                    
+                    var e = string.Join(Environment.NewLine, errors);
+
+                    throw new Exception($"Json non valido con lo schema indicato:{Environment.NewLine}{e}");
                 }
 
             }

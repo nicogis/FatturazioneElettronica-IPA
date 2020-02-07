@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "name": "WS04Response",
+    "name": "WS12Response",
     "type": "object",
     "properties": {
         "result": {
@@ -30,46 +30,62 @@
             "items": {
                 "type": "object",
                 "properties": {
+                    "domicilio_digitale": {
+                        "type": "string",
+                        "description": "Domicilio digitale"
+                    },
+                    "tipo": {
+                        "type": "string",
+                        "description": "Tipo Domicilio digitale; attualmente solo PEC"
+                    },
+                    "data_pubblicazione": {
+                        "type": "string",
+                        "description": "Data pubblicazione nuovo Domicilio digitale"
+                    },
+                    "data_cancellazione": {
+                        "type": "string",
+                        "description": "Data pubblicazione cancellazione Domicilio digitale"
+                    },
+                    "cod_uni_ou": {
+                        "type": "string",
+                        "description": "Codice univoco ufficio"
+                    },
+                    "cod_ou": {
+                        "type": "string",
+                        "description": "Codice ufficio"
+                    },
+                    "des_ou": {
+                        "type": "string",
+                        "description": "Nome ufficio"
+                    },
                     "cod_amm": {
                         "type": "string",
                         "description": "Codice Ente accreditato in IPA"
                     },
-                    "stato_canale": {
+                    "des_amm": {
                         "type": "string",
-                        "description": "Stato del canale di fatturazione"
-                    },
-                    "cod_uni_ou": {
-                        "type": "string",
-                        "description": "Codice Univoco dell'Ufficio di fatturazione elettronica"
+                        "description": "Nome Ente "
                     },
                     "cod_aoo": {
                         "type": "string",
                         "description": "Codice AOO"
                     },
-                    "des_ou": {
+                    "des_aoo": {
                         "type": "string",
-                        "description": "Nome dell'UO"
-                    },
-                    "cf": {
-                        "type": "string",
-                        "description": "Codice fiscale del servizio di fatturazione elettronica"
-                    },
-                    "dt_verifica_cf": {
-                        "type": "string",
-                        "description": "Data di validazione del cf"
-                    },
-                    "dat_val_canale_trasm_sfe": {
-                        "type": "string",
-                        "description": "Data di inizio validità del servizio di fatturazione"
+                        "description": "Nome dell'AOO"
                     }
                 },
                 "required": [
-                    "cod_amm",
-                    "stato_canale",
+                    "domicilio_digitale",
+                    "tipo",
+                    "data_pubblicazione",
+                    "cod_uni_ou",
+                    "cod_ou",
                     "des_ou",
-                    "cf",
-                    "dt_verifica_cf",
-                    "dat_val_canale_trasm_sfe"
+                    "cod_amm",
+                    "des_amm",
+                    "cod_aoo",
+                    "des_aoo"
                 ]
             }
         }

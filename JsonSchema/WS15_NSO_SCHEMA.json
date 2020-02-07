@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "name": "WS07Response",
+    "name": "WS15Response",
     "type": "object",
     "properties": {
         "result": {
@@ -30,32 +30,46 @@
             "items": {
                 "type": "object",
                 "properties": {
-                    "tipo_email": {
-                        "type": "string",
-                        "description": "Tipo email:PEC|CECPAC|ALTRO"
-                    },
-                    "tipo_entita": {
-                        "type": "string",
-                        "description": "Tipo entità: AMM|AOO|UO|SERVAMM|SERVAOO|SERVOU|RESPAOO|RESPUO"
-                    },
                     "cod_amm": {
                         "type": "string",
                         "description": "Codice Ente accreditato in IPA"
                     },
-                    "des_amm": {
+                    "stato_canale": {
                         "type": "string",
-                        "description": "Denominazione Ente accreditato in IPA"
+                        "description": "Stato del canale ordini"
                     },
-                    "cod_entita": {
+                    "cod_uni_ou": {
                         "type": "string",
-                        "description": "Codice dell'entità"
+                        "description": "Codice Univoco dell'Ufficio del nodo di smistamento ordini"
+                    },
+                    "cod_aoo": {
+                        "type": "string",
+                        "description": "Codice AOO"
+                    },
+                    "des_ou": {
+                        "type": "string",
+                        "description": "Nome dell'UO"
+                    },
+                    "cf": {
+                        "type": "string",
+                        "description": "Codice fiscale del nodo di smistamento ordini"
+                    },
+                    "dt_verifica_cf": {
+                        "type": "string",
+                        "description": "Data di validazione del cf"
+                    },
+                    "dat_val_canale_trasm_nso": {
+                        "type": "string",
+                        "description": "Data di inizio validità del nodo di smistamento ordini"
                     }
                 },
                 "required": [
-                    "tipo_email",
-                    "tipo_entita",
                     "cod_amm",
-                    "des_amm"
+                    "stato_canale",
+                    "des_ou",
+                    "cf",
+                    "dt_verifica_cf",
+                    "dat_val_canale_trasm_nso"
                 ]
             }
         }

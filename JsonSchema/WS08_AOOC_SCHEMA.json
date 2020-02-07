@@ -1,127 +1,126 @@
-{ 
- "$schema": "http://json-schema.org/draft-03/schema#",
- "name": "WS02Response",
- "type": "object",
- "properties": {
-  "result": {
-   "type": "object",
-   "properties": {
-    "cod_err": {
-     "type": "number",
-     "description": "Codice di ritorno",
-     "required": true
-    },
-    "desc_err": {
-     "type": "string",
-     "description": "Descrizione errore",
-     "required": false
-    },
-    "num_items": {
-     "type": "number",
-     "description": "Numero di occorrenze trovate",
-     "minimum": 0,
-     "required": true
-    }
-   }
-  },
-  "data":{
-   "type": "array",
-   "items":{
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "name": "WS08Response",
     "type": "object",
-    "properties":{
-     "cod_amm":{
-      "type": "string",
-      "description": "Codice Ente accreditato in IPA",
-      "required": true
-     },
-     "cod_aoo":{
-      "type": "string",
-      "description": "Codice AOO",
-      "required": true
-     },
-	 "des_aoo":{
-      "type": "string",
-      "description": "Nome dell'AOO",
-      "required": false
-     },
-	 "regione":{
-      "type": "string",
-      "description": "Regione registrata in IPA per la sede dell'AOO",
-      "required": false
-     },
-	 "provincia":{
-      "type": "string",
-      "description": "Provincia registrata in IPA per la sede dell'AOO",
-      "required": false
-     },
-	 "comune":{
-      "type": "string",
-      "description": "Comune registrato in IPA per la sede dell'AOO",
-      "required": false
-     },
-	 "cap":{
-      "type": "string",
-      "description": "Cap registrato in IPA per la sede dell'AOO",
-      "required": false
-     },
-	 "indirizzo":{
-      "type": "string",
-      "description": "Indirizzo postale registrato in IPA per la sede dell'AOO",
-      "required": false
-     },
-	 "tel":{
-      "type": "string",
-      "description": "Numero di telefono registrato in IPA per dell’AOO",
-      "required": false
-     },
-	 "fax":{
-      "type": "string",
-      "description": "Numero di fax registrato in IPA per dell’AOO",
-      "required": false
-     },
-	 "mail1":{
-      "type": "string",
-      "description": "Indirizzo email primario associato all’AOO",
-      "required": false
-     },
-	 "mail2":{
-      "type": "string",
-      "description": "Indirizzo email associato all’AOO",
-      "required": false
-     },
-	 "mail3":{
-      "type": "string",
-      "description": "Indirizzo email associato all’AOO",
-      "required": false
-     },
-	 "nome_resp":{
-      "type": "string",
-      "description": "Nome del responsabile dell'AOO",
-      "required": true
-     },
-	 "cogn_resp":{
-      "type": "string",
-      "description": "Cognome del responsabile dell'AOO",
-      "required": false
-     },
-	 "mail_resp":{
-      "type": "string",
-      "description": "Indirizzo email del responsabile dell'AOO",
-      "required": false
-     },
-         "tel_resp":{
-      "type": "string",
-      "description": "Numero di telefono del responsabile dell'AOO",
-      "required": false
-     },
-	 "dat_fine_val":{
-      "type": "string",
-      "description": "Data cessazione AOO",
-      "required": false
-     }
-    }
-   },
-   "required": false
-  }
- }
+    "properties": {
+        "result": {
+            "type": "object",
+            "properties": {
+                "cod_err": {
+                    "type": "number",
+                    "description": "Codice di ritorno"
+                },
+                "desc_err": {
+                    "type": "string",
+                    "description": "Descrizione errore"
+                },
+                "num_items": {
+                    "type": "number",
+                    "description": "Numero di occorrenze trovate",
+                    "minimum": 0
+                }
+            },
+            "required": [
+                "cod_err",
+                "num_items"
+            ]
+        },
+        "data": {
+            "type": ["array", "null"],
+            "items": {
+                "type": "object",
+                "properties": {
+                    "cod_amm": {
+                        "type": "string",
+                        "description": "Codice Ente accreditato in IPA"
+                    },
+                    "cod_aoo": {
+                        "type": "string",
+                        "description": "Codice AOO"
+                    },
+                    "des_aoo": {
+                        "type": "string",
+                        "description": "Nome dell'AOO"
+                    },
+                    "regione": {
+                        "type": "string",
+                        "description": "Regione registrata in IPA per la sede dell'AOO"
+                    },
+                    "provincia": {
+                        "type": "string",
+                        "description": "Provincia registrata in IPA per la sede dell'AOO"
+                    },
+                    "comune": {
+                        "type": "string",
+                        "description": "Comune registrato in IPA per la sede dell'AOO"
+                    },
+                    "cap": {
+                        "type": "string",
+                        "description": "Cap registrato in IPA per la sede dell'AOO"
+                    },
+                    "indirizzo": {
+                        "type": "string",
+                        "description": "Indirizzo postale registrato in IPA per la sede dell'AOO"
+                    },
+                    "tel": {
+                        "type": "string",
+                        "description": "Numero di telefono registrato in IPA per dell'AOO"
+                    },
+                    "fax": {
+                        "type": "string",
+                        "description": "Numero di fax registrato in IPA per dell'AOO"
+                    },
+                    "mail1": {
+                        "type": "string",
+                        "description": "Indirizzo email primario associato all'AOO"
+                    },
+                    "mail2": {
+                        "type": "string",
+                        "description": "Indirizzo email associato all'AOO"
+                    },
+                    "mail3": {
+                        "type": "string",
+                        "description": "Indirizzo email associato all'AOO"
+                    },
+                    "nome_resp": {
+                        "type": "string",
+                        "description": "Nome del responsabile dell'AOO"
+                    },
+                    "cogn_resp": {
+                        "type": "string",
+                        "description": "Cognome del responsabile dell'AOO"
+                    },
+                    "mail_resp": {
+                        "type": "string",
+                        "description": "Indirizzo email del responsabile dell'AOO"
+                    },
+                    "tel_resp": {
+                        "type": "string",
+                        "description": "Numero di telefono del responsabile dell'AOO"
+                    },
+                    "dat_fine_val": {
+                        "type": "string",
+                        "description": "Data cessazione AOO"
+                    }
+                },
+                "required": [
+                    "cod_amm",
+                    "cod_aoo",
+                    "des_aoo",
+                    "regione",
+                    "provincia",
+                    "comune",
+                    "cap",
+                    "indirizzo",
+                    "mail1",
+                    "nome_resp",
+                    "cogn_resp",
+                    "dat_fine_val"
+                ]
+            }
+        }
+    },
+    "required": [
+        "result"
+    ]
 }

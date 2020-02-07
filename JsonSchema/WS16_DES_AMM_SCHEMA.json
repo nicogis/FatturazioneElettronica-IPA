@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "name": "WS01Response",
+    "name": "WS16Response",
     "type": "object",
     "properties": {
         "result": {
@@ -34,40 +34,18 @@
                         "type": "string",
                         "description": "Codice Ente accreditato in IPA"
                     },
+                    "acronimo": {
+                        "type": "string",
+                        "description": "Acronimo dell'Ente"
+                    },
                     "des_amm": {
                         "type": "string",
                         "description": "Denominazione Ente accreditato in IPA"
-                    },
-                    "OU": {
-                        "type": "array",
-                        "items": {
-                            "type": "object",
-                            "properties": {
-                                "des_ou": {
-                                    "type": "string",
-                                    "description": "Denominazione Unita Organizzativa"
-                                },
-                                "stato_canale": {
-                                    "type": "string",
-                                    "description": "A: Canale Attivo, V: In Fase di validazione"
-                                },
-                                "cod_uni_ou": {
-                                    "type": "string",
-                                    "description": "Codice Univoco Ufficio destinatario di Fatturazione Elettroniche"
-                                }
-                            },
-                            "required": [
-                                "des_ou",
-                                "stato_canale"
-                            ]
-                        },
-                        "minItems": 1
                     }
                 },
                 "required": [
                     "cod_amm",
-                    "des_amm",
-                    "OU"
+                    "des_amm"
                 ]
             }
         }

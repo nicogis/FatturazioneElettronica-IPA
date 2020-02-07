@@ -1,17 +1,25 @@
-﻿namespace FatturazioneElettronica.IPA
+﻿//-----------------------------------------------------------------------
+// <copyright file="Ws07.cs" company="Studio A&T s.r.l.">
+//     Copyright (c) Studio A&T s.r.l. All rights reserved.
+// </copyright>
+// <author>Nicogis</author>
+//-----------------------------------------------------------------------
+namespace FatturazioneElettronica.IPA
 {
     using Newtonsoft.Json;
     using System.Collections.Generic;
 
     /// <summary>
-    /// Response: L’iPA mette a disposizione del pubblico una serie di informazioni che gli Enti in esso accreditati sono tenuti a pubblicare. Per ciascun Ente possono essere definite due entità: Unità Organizzative e Aree Organizzative Omogenee, a ciascuna delle quali possono essere associati una serie di servizi. Questo servizio web consente di estrarre dall’iPA informazioni relativa ad una entità, sia essa un Ente, un’Unità Organizzativa, un’Area Organizzativa Omogenea, un servizio generico, un Servizio di Fatturazione Elettronica, un Responsabile o un Referente, associata ad uno specifico indirizzo email.Se un indirizzo mail è associato a più entità all’interno di iPA, verranno visualizzate le informazioni di dettaglio relative a ciascuna delle entità individuate. 
+    /// Questo servizio web consente di estrarre dall'iPA informazioni relativa ad una entità, sia essa un Ente, un'Unità Organizzativa, un'Area Organizzativa Omogenea, 
+    /// un servizio generico, un Servizio di Fatturazione Elettronica, un Responsabile o un Referente, associata ad uno specifico indirizzo email. 
+    /// Se un indirizzo mail è associato a più entità all'interno di iPA, verranno visualizzate le informazioni di dettaglio relative a ciascuna delle entità individuate. 
     /// </summary>
     public partial class Ws07 : WsJson
     {
-        [JsonProperty("data", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("data")]
         public List<DataWs07> Data { get; set; }
 
-        [JsonProperty("result", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("result", Required = Required.Always)]
         public Result Result { get; set; }
     }
 
@@ -20,33 +28,31 @@
         /// <summary>
         /// Codice Ente accreditato in IPA
         /// </summary>
-        [JsonProperty("cod_amm")]
+        [JsonProperty("cod_amm", Required = Required.Always)]
         public string CodAmm { get; set; }
 
         /// <summary>
         /// Codice dell'entità
         /// </summary>
-        [JsonProperty("cod_entita")]
+        [JsonProperty("cod_entita", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
         public string CodEntita { get; set; }
 
         /// <summary>
         /// Denominazione Ente accreditato in IPA
         /// </summary>
-        [JsonProperty("des_amm", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("des_amm", Required = Required.Always)]
         public string DesAmm { get; set; }
 
         /// <summary>
         /// Tipo email:PEC|CECPAC|ALTRO
         /// </summary>
-        [JsonProperty("tipo_email", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("tipo_email", Required = Required.Always)]
         public string TipoEmail { get; set; }
 
         /// <summary>
         /// Tipo entità: AMM|AOO|UO|SERVAMM|SERVAOO|SERVOU|RESPAOO|RESPUO
         /// </summary>
-        [JsonProperty("tipo_entita")]
+        [JsonProperty("tipo_entita", Required = Required.Always)]
         public string TipoEntita { get; set; }
     }
-
-    
 }
