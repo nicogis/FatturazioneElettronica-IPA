@@ -26,9 +26,7 @@
             ]
         },
         "data": {
-            "type": ["object", "null"],
-            "items": {
-                "type": "object",
+                "type": ["object", "null"],
                 "properties": {
                     "cod_amm": {
                         "type": "string",
@@ -84,27 +82,27 @@
                     },
                     "mail1": {
                         "type": "string",
-                        "description": "Indirizzo email primario associato all'Ente di tipo PEC|CECPAC"
+                        "description": "Indirizzo email primario associato all’Ente di tipo PEC|CECPAC"
                     },
                     "mail2": {
                         "type": "string",
-                        "description": "Indirizzo email associato all'Ente"
+                        "description": "Indirizzo email associato all’Ente"
                     },
                     "mail3": {
                         "type": "string",
-                        "description": "Indirizzo email associato all'Ente"
+                        "description": "Indirizzo email associato all’Ente"
                     },
                     "mail4": {
                         "type": "string",
-                        "description": "Indirizzo email primario associato all'Ente"
+                        "description": "Indirizzo email primario associato all’Ente"
                     },
                     "mail5": {
                         "type": "string",
-                        "description": "Indirizzo email associato all'Ente"
+                        "description": "Indirizzo email associato all’Ente"
                     },
                     "tipologia": {
                         "type": "string",
-                        "description": "Tipologia dell'Ente in IPA"
+                        "description": "Tipologia dell’Ente in IPA"
                     },
                     "categoria": {
                         "type": "string",
@@ -136,8 +134,7 @@
                     "data_accreditamento",
                     "cf"
                 ]
-            }
-        }
+        }        
     },
     "required": [
         "result"

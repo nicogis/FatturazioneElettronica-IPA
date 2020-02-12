@@ -32,13 +32,13 @@ namespace FatturazioneElettronica.IPA
         /// <summary>
         /// Codice fiscale del servizio di faturazione
         /// </summary>
-        [JsonProperty("cf", Required = Required.Always)]
+        [JsonProperty("cf", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
         public string Cf { get; set; }
 
         /// <summary>
         /// Codice fiscale del nodo di smistamento ordini
         /// </summary>
-        [JsonProperty("cf_nso", Required = Required.Always)]
+        [JsonProperty("cf_nso", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
         public string CfNso { get; set; }
 
         /// <summary>
@@ -74,13 +74,13 @@ namespace FatturazioneElettronica.IPA
         /// <summary>
         /// Data di inizio validità del nodo di smistamento ordini
         /// </summary>
-        [JsonProperty("dat_val_canale_trasm_nso", Required = Required.Always)]
+        [JsonProperty("dat_val_canale_trasm_nso", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
         public string DatValCanaleTrasmNso { get; set; }
 
         /// <summary>
         /// Data di inizio validità del servizio di fatturazione
         /// </summary>
-        [JsonProperty("dat_val_canale_trasm_sfe", Required = Required.Always)]
+        [JsonProperty("dat_val_canale_trasm_sfe", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
         public string DatValCanaleTrasmSfe { get; set; }
 
         /// <summary>
@@ -92,13 +92,13 @@ namespace FatturazioneElettronica.IPA
         /// <summary>
         /// Data di validazione del cf del servizio di fatturazione
         /// </summary>
-        [JsonProperty("dt_verifica_cf", Required = Required.Always)]
+        [JsonProperty("dt_verifica_cf", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
         public string DtVerificaCf { get; set; }
 
         /// <summary>
         /// Data di validazione del cf del nodo di smistamento ordini
         /// </summary>
-        [JsonProperty("dt_verifica_cf_nso", Required = Required.Always)]
+        [JsonProperty("dt_verifica_cf_nso", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
         public string DtVerificaCfNso { get; set; }
 
         /// <summary>
@@ -114,19 +114,19 @@ namespace FatturazioneElettronica.IPA
         public string Indirizzo { get; set; }
 
         /// <summary>
-        /// Indirizzo email primario associato all'UO
+        /// Indirizzo email primario associato all’UO
         /// </summary>
         [JsonProperty("mail1", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
         public string Mail1 { get; set; }
 
         /// <summary>
-        /// Indirizzo email associato all'UO
+        /// Indirizzo email associato all’UO
         /// </summary>
         [JsonProperty("mail2", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
         public string Mail2 { get; set; }
 
         /// <summary>
-        /// Indirizzo email associato all'UO
+        /// Indirizzo email associato all’UO
         /// </summary>
         [JsonProperty("mail3", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
         public string Mail3 { get; set; }
@@ -158,13 +158,13 @@ namespace FatturazioneElettronica.IPA
         /// <summary>
         /// Stato del canale di fatturazione; A:Attivo|V=In fase di validazione
         /// </summary>
-        [JsonProperty("stato_canale", Required = Required.Always)]
+        [JsonProperty("stato_canale", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
         public string StatoCanale { get; set; }
 
         /// <summary>
         /// Stato del canale di ordini; A:Attivo|V=In fase di validazione
         /// </summary>
-        [JsonProperty("stato_canale_nso", Required = Required.Always)]
+        [JsonProperty("stato_canale_nso", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
         public string StatoCanaleNso { get; set; }
 
         /// <summary>

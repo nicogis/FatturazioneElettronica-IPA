@@ -90,31 +90,31 @@ namespace FatturazioneElettronica.IPA
         public double? LivAccessibili { get; set; }
 
         /// <summary>
-        /// Indirizzo email primario associato all'Ente di tipo PEC|CECPAC
+        /// Indirizzo email primario associato all’Ente di tipo PEC|CECPAC
         /// </summary>
         [JsonProperty("mail1", Required = Required.Always)]
         public string Mail1 { get; set; }
 
         /// <summary>
-        /// Indirizzo email associato all'Ente
+        /// Indirizzo email associato all’Ente
         /// </summary>
         [JsonProperty("mail2", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
         public string Mail2 { get; set; }
 
         /// <summary>
-        /// Indirizzo email associato all'Ente
+        /// Indirizzo email associato all’Ente
         /// </summary>
         [JsonProperty("mail3", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
         public string Mail3 { get; set; }
 
         /// <summary>
-        /// Indirizzo email primario associato all'Ente
+        /// Indirizzo email primario associato all’Ente
         /// </summary>
         [JsonProperty("mail4", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
         public string Mail4 { get; set; }
 
         /// <summary>
-        /// Indirizzo email associato all'Ente
+        /// Indirizzo email associato all’Ente
         /// </summary>
         [JsonProperty("mail5", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
         public string Mail5 { get; set; }
@@ -144,7 +144,7 @@ namespace FatturazioneElettronica.IPA
         public string SitoIstituzionale { get; set; }
 
         /// <summary>
-        /// Tipologia dell'Ente in IPA
+        /// Tipologia dell’Ente in IPA
         /// </summary>
         [JsonProperty("tipologia", Required = Required.Always)]
         public string Tipologia { get; set; }

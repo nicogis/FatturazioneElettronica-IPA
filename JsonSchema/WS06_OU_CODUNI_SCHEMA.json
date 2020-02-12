@@ -26,9 +26,7 @@
             ]
         },
         "data": {
-            "type": ["object", "null"],
-            "items": {
-                "type": "object",
+                "type": ["object", "null"],
                 "properties": {
                     "cod_amm": {
                         "type": "string",
@@ -76,15 +74,15 @@
                     },
                     "mail1": {
                         "type": "string",
-                        "description": "Indirizzo email primario associato all'UO"
+                        "description": "Indirizzo email primario associato all’UO"
                     },
                     "mail2": {
                         "type": "string",
-                        "description": "Indirizzo email associato all'UO"
+                        "description": "Indirizzo email associato all’UO"
                     },
                     "mail3": {
                         "type": "string",
-                        "description": "Indirizzo email associato all'UO"
+                        "description": "Indirizzo email associato all’UO"
                     },
                     "nome_resp": {
                         "type": "string",
@@ -145,18 +143,9 @@
                     "cap",
                     "indirizzo",
                     "nome_resp",
-                    "cogn_resp",
-                    "stato_canale",
-                    "cf",
-                    "dt_verifica_cf",
-                    "dat_val_canale_trasm_sfe",
-                    "stato_canale_nso",
-                    "cf_nso",
-                    "dt_verifica_cf_nso",
-                    "dat_val_canale_trasm_nso"
+                    "cogn_resp"
                 ]
-            }
-        }
+        }        
     },
     "required": [
         "result"
