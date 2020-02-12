@@ -26,6 +26,7 @@ namespace FatturazioneElettronica.IPA
             return base.Request();
         }
 
+        
         public string CF
         {
             get;

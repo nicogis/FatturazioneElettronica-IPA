@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>$id$</id>
-    <version>1.3.0</version>
+    <version>1.6.0</version>
     <title>Fatturazione elettronica - IPA</title>
     <authors>nicogis</authors>
     <owners>Studio A&amp;T s.r.l.</owners>
@@ -11,7 +11,7 @@
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>Client per web services IPA (Indice delle Pubblice Amministrazioni)</description>
     <releaseNotes>Versione iniziale</releaseNotes>
-    <copyright>Copyright 2018</copyright>
+    <copyright>Copyright 2020</copyright>
     <tags>IPA FatturazioneElettronica nicogis</tags>
   </metadata>
 </package>

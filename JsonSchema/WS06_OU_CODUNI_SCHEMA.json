@@ -26,7 +26,7 @@
             ]
         },
         "data": {
-            "type": ["array", "null"],
+            "type": ["object", "null"],
             "items": {
                 "type": "object",
                 "properties": {
