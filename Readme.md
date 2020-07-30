@@ -10,7 +10,7 @@ Occorre selezionare la voce del menu Richiedi Authorization ID e compilare la fo
 
 ```csharp
 
-        myAuthId = "XXXXXXXX";
+                myAuthId = "XXXXXXXX";
 		
 		Ws01_SFE_CF a = new Ws01_SFE_CF("81034410609", myAuthId);
 		Ws01 aa = a.Request();
