@@ -15,7 +15,8 @@ Occorre selezionare la voce del menu Richiedi Authorization ID e compilare la fo
        
 		
 		myAuthId = "XXXXXXXX";
-       // Ws01_SFE_CF.ValidateSchema = true; (default è false)
+
+		// Ws01_SFE_CF.ValidateSchema = true; (default è false)
 		Ws01_SFE_CF a = new Ws01_SFE_CF("81034410609", myAuthId);
 		Ws01 aa = a.Request();
 
