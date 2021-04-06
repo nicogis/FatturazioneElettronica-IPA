@@ -1,0 +1,111 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "name": "WS18Response",
+  "type": "object",
+  "properties": {
+     "result": {
+            "type": "object",
+            "properties": {
+                "cod_err": {
+                    "type": "number",
+                    "description": "Codice di ritorno"
+                },
+                "desc_err": {
+                    "type": "string",
+                    "description": "Descrizione errore"
+                },
+                "num_items": {
+                    "type": "number",
+                    "description": "Numero di occorrenze trovate",
+                    "minimum": 0
+                }
+            },
+            "required": [
+                "cod_err",
+                "num_items"
+            ]
+        },
+        "data": {
+            "type": ["array", "null"],
+            "items": {
+                "cod_uni_aoo": {
+      "type": "string",
+      "description": "Codice univoco AOO"
+    },
+    "cod_amm": {
+      "type": "string",
+      "description": "Codice Ente accreditato in IPA"
+    },
+    "cod_aoo": {
+      "type": "string",
+      "description": "Codice AOO"
+    },
+    "des_aoo": {
+      "type": "string",
+      "description": "Nome dell'AOO"
+    },
+    "regione": {
+      "type": "string",
+      "description": "Regione registrata in IPA per la sede dell'AOO"
+    },
+    "provincia": {
+      "type": "string",
+      "description": "Provincia registrata in IPA per la sede dell'AOO"
+    },
+    "comune": {
+      "type": "string",
+      "description": "Comune registrato in IPA per la sede dell'AOO"
+    },
+    "cap": {
+      "type": "string",
+      "description": "Cap registrato in IPA per la sede dell'AOO"
+    },
+    "indirizzo": {
+      "type": "string",
+      "description": "Indirizzo postale registrato in IPA per la sede dell'AOO"
+    },
+    "tel": {
+      "type": "string",
+      "description": "Numero di telefono registrato in IPA per dell’AOO"
+    },
+    "fax": {
+      "type": "string",
+      "description": "Numero di fax registrato in IPA per dell’AOO"
+    },
+    "mail1": {
+      "type": "string",
+      "description": "Indirizzo email primario associato all’AOO"
+    },
+    "mail2": {
+      "type": "string",
+      "description": "Indirizzo email associato all’AOO"
+    },
+    "mail3": {
+      "type": "string",
+      "description": "Indirizzo email associato all’AOO"
+    },
+    "nome_resp": {
+      "type": "string",
+      "description": "Nome del responsabile dell'AOO"
+    },
+    "cogn_resp": {
+      "type": "string",
+      "description": "Cognome del responsabile dell'AOO"
+    },
+    "mail_resp": {
+      "type": "string",
+      "description": "Indirizzo email del responsabile dell'AOO"
+    },
+    "tel_resp": {
+      "type": "string",
+      "description": "Numero di telefono del responsabile dell'AOO"
+    }
+  },
+  "required": [ "cod_uni_aoo" ]
+            }
+        
+    },
+    "required": [
+        "result"
+    ]
+}

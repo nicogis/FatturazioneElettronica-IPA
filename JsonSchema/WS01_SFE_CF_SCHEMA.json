@@ -38,7 +38,7 @@
                         "type": "string",
                         "description": "Denominazione Ente accreditato in IPA"
                     },
-                    "OU": {
+                    "ou": {
                         "type": "array",
                         "items": {
                             "type": "object",
@@ -67,7 +67,7 @@
                 "required": [
                     "cod_amm",
                     "des_amm",
-                    "OU"
+                    "ou"
                 ]
             }
         }

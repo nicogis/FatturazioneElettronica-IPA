@@ -12,15 +12,15 @@ namespace FatturazioneElettronica.IPA
     /// Questo servizio web consente di estrarre dall'iPA informazioni relativa alla lista dei domicili digitali di un Ente, 
     /// tramite la lista delle sue Aree Organizzative Omogenee o di una sua singola occorrenza. 
     /// </summary>
-    public class Ws09_DOM_DIG_AOO : Ws<Ws09>
+    public class Ws09_DOMDIGAOO : Ws<Ws09>
     {
-        public Ws09_DOM_DIG_AOO(string codAmm, string codAOO, string authId) : base(authId)
+        public Ws09_DOMDIGAOO(string codAmm, string codAOO, string authId) : base(authId)
         {
             this.CodAmm = codAmm;
             this.CodAOO = codAOO;
         }
 
-        public Ws09_DOM_DIG_AOO(string codAmm, string authId) : this(codAmm, null, authId)
+        public Ws09_DOMDIGAOO(string codAmm, string authId) : this(codAmm, null, authId)
         {
 
         }

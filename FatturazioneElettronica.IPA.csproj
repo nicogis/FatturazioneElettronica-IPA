@@ -31,11 +31,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json.Schema, Version=3.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>packages\Newtonsoft.Json.Schema.3.0.13\lib\net45\Newtonsoft.Json.Schema.dll</HintPath>
+      <HintPath>packages\Newtonsoft.Json.Schema.3.0.14\lib\net45\Newtonsoft.Json.Schema.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -57,6 +57,7 @@
     <Compile Include="JsonClass\Ws06.cs" />
     <Compile Include="JsonClass\Ws07.cs" />
     <Compile Include="JsonClass\Ws08.cs" />
+    <Compile Include="JsonClass\Ws18.cs" />
     <Compile Include="JsonClass\Ws16.cs" />
     <Compile Include="JsonClass\Ws15.cs" />
     <Compile Include="JsonClass\Ws14.cs" />
@@ -75,7 +76,7 @@
     <Compile Include="ws\Ws10_DOM_DIG_OU.cs" />
     <Compile Include="ws\Ws08_AOOC.cs" />
     <Compile Include="ws\Ws07_EMAIL.cs" />
-    <Compile Include="ws\Ws06_OU_CODUNI.cs" />
+    <Compile Include="ws\Ws06_OU_COD_UNI.cs" />
     <Compile Include="ws\Ws05_AMM.cs" />
     <Compile Include="ws\Ws04_SFE.cs" />
     <Compile Include="ws\EstensioniFile.cs" />
@@ -83,7 +84,8 @@
     <Compile Include="ws\Ws.cs" />
     <Compile Include="ws\Ws03_OU.cs" />
     <Compile Include="ws\Ws02_AOO.cs" />
-    <Compile Include="ws\Ws09_DOM_DIG_AOO.cs" />
+    <Compile Include="ws\Ws09_DOMDIGAOO.cs" />
+    <Compile Include="ws\Ws18_AOO.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitattributes" />
@@ -94,10 +96,10 @@
     <EmbeddedResource Include="JsonSchema\WS03_OU_SCHEMA.json" />
     <EmbeddedResource Include="JsonSchema\WS04_SFE_SCHEMA.json" />
     <EmbeddedResource Include="JsonSchema\WS05_AMM_SCHEMA.json" />
-    <EmbeddedResource Include="JsonSchema\WS06_OU_CODUNI_SCHEMA.json" />
+    <EmbeddedResource Include="JsonSchema\WS06_OU_COD_UNI_SCHEMA.json" />
     <EmbeddedResource Include="JsonSchema\WS07_EMAIL_SCHEMA.json" />
     <EmbeddedResource Include="JsonSchema\WS08_AOOC_SCHEMA.json" />
-    <EmbeddedResource Include="JsonSchema\WS09_DOM_DIG_AOO_SCHEMA.json" />
+    <EmbeddedResource Include="JsonSchema\WS09_DOMDIGAOO_SCHEMA.json" />
     <EmbeddedResource Include="JsonSchema\WS10_DOM_DIG_OU_SCHEMA.json" />
     <EmbeddedResource Include="JsonSchema\WS11_DOM_DIG_STOR_AOO_SCHEMA.json" />
     <EmbeddedResource Include="JsonSchema\WS12_DOM_DIG_STOR_OU_SCHEMA.json" />
@@ -105,6 +107,7 @@
     <EmbeddedResource Include="JsonSchema\WS14_NSO_CF_SCHEMA.json" />
     <EmbeddedResource Include="JsonSchema\WS15_NSO_SCHEMA.json" />
     <EmbeddedResource Include="JsonSchema\WS16_DES_AMM_SCHEMA.json" />
+    <EmbeddedResource Include="JsonSchema\WS18_AOO_SCHEMA.json" />
     <None Include="LICENSE" />
     <None Include="packages.config" />
     <None Include="Readme.md" />

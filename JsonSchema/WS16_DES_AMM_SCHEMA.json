@@ -44,8 +44,7 @@
                     }
                 },
                 "required": [
-                    "cod_amm",
-                    "des_amm"
+                    "cod_amm"
                 ]
             }
         }

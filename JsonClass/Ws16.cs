@@ -32,7 +32,7 @@
         /// <summary>
         /// Denominazione Ente accreditato in IPA
         /// </summary>
-        [JsonProperty("des_amm", Required = Required.Always)]
+        [JsonProperty("des_amm", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
         public string DesAmm { get; set; }
     }
 }

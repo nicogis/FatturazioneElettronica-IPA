@@ -35,7 +35,7 @@ namespace FatturazioneElettronica.IPA
         [JsonProperty("des_amm", Required = Required.Always)]
         public string DesAmm { get; set; }
 
-        [JsonProperty("OU", Required = Required.Always)]
+        [JsonProperty("ou", Required = Required.Always)]
         public List<Ou> Ou { get; set; }
     }
 }

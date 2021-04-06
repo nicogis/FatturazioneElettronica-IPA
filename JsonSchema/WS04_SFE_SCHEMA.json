@@ -65,11 +65,8 @@
                 },
                 "required": [
                     "cod_amm",
-                    "stato_canale",
-                    "des_ou",
-                    "cf",
-                    "dt_verifica_cf",
-                    "dat_val_canale_trasm_sfe"
+                    "cod_uni_ou",
+                    "cf"
                 ]
             }
         }

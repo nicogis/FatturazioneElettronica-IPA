@@ -52,10 +52,9 @@
                     }
                 },
                 "required": [
-                    "tipo_email",
                     "tipo_entita",
                     "cod_amm",
-                    "des_amm"
+                    "cod_entita"
                 ]
             }
         }

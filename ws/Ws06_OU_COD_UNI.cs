@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="Ws06_OU_CODUNI.cs" company="Studio A&T s.r.l.">
+// <copyright file="Ws06_OU_COD_UNI.cs" company="Studio A&T s.r.l.">
 //     Copyright (c) Studio A&T s.r.l. All rights reserved.
 // </copyright>
 // <author>Nicogis</author>
@@ -11,9 +11,9 @@ namespace FatturazioneElettronica.IPA
     /// <summary>
     /// Questo servizio web consente di estrarre dall' iPA informazioni relative ad una specifica Unità Organizzativa di un Ente accreditato in iPA. 
     /// </summary>
-    public class Ws06_OU_CODUNI : Ws<Ws06>
+    public class Ws06_OU_COD_UNI : Ws<Ws06>
     {
-        public Ws06_OU_CODUNI(string codUniOU, string authId) : base(authId)
+        public Ws06_OU_COD_UNI(string codUniOU, string authId) : base(authId)
         {
             this.CodUniOU = codUniOU; 
         }

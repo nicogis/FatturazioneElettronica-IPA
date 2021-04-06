@@ -43,7 +43,7 @@
                         "description": "Data pubblicazione nuovo Domicilio digitale"
                     },
                     "data_cancellazione": {
-                        "type": "string",
+                        "type": ["string", "null"],
                         "description": "Data pubblicazione cancellazione Domicilio digitale"
                     },
                     "cod_uni_ou": {
@@ -62,7 +62,7 @@
                         "type": "string",
                         "description": "Codice Ente accreditato in IPA"
                     },
-                    "des_amm": {
+                    "des_Amm": {
                         "type": "string",
                         "description": "Nome Ente "
                     },
@@ -79,13 +79,13 @@
                     "domicilio_digitale",
                     "tipo",
                     "data_pubblicazione",
+                    "data_cancellazione",
                     "cod_uni_ou",
                     "cod_ou",
                     "des_ou",
                     "cod_amm",
-                    "des_amm",
-                    "cod_aoo",
-                    "des_aoo"
+                    "des_Amm",
+                    "cod_aoo"
                 ]
             }
         }

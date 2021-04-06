@@ -93,13 +93,7 @@
                     "data_pubblicazione",
                     "cod_amm",
                     "des_amm",
-                    "cod_aoo",
-                    "des_aoo",
-                    "regione",
-                    "provincia",
-                    "comune",
-                    "cap",
-                    "indirizzo"
+                    "cod_aoo"
                 ]
             }
         }

@@ -118,21 +118,7 @@
                     }
                 },
                 "required": [
-                    "cod_amm",
-                    "des_amm",
-                    "regione",
-                    "provincia",
-                    "comune",
-                    "cap",
-                    "indirizzo",
-                    "titolo_resp",
-                    "nome_resp",
-                    "cogn_resp",
-                    "mail1",
-                    "tipologia",
-                    "categoria",
-                    "data_accreditamento",
-                    "cf"
+                    "cod_amm"
                 ]
         }        
     },

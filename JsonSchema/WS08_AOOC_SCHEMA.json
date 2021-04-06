@@ -91,7 +91,7 @@
                         "description": "Cognome del responsabile dell'AOO"
                     },
                     "mail_resp": {
-                        "type": "string",
+                        "type": ["string", "null"],
                         "description": "Indirizzo email del responsabile dell'AOO"
                     },
                     "tel_resp": {
@@ -106,16 +106,8 @@
                 "required": [
                     "cod_amm",
                     "cod_aoo",
-                    "des_aoo",
-                    "regione",
-                    "provincia",
-                    "comune",
-                    "cap",
-                    "indirizzo",
-                    "mail1",
-                    "nome_resp",
-                    "cogn_resp",
-                    "dat_fine_val"
+                    "nome_resp"
+                    
                 ]
             }
         }

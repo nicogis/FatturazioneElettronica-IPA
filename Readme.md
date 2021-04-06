@@ -1,17 +1,21 @@
 #### Indice delle Pubblice Amministrazioni
 
 ### Descrizione
-Libreria sviluppata in c# per interrogare i web services dell'IPA. Per maggiore dettagli visitare il [sito iPA](https://www.indicepa.gov.it/documentale/n-consulta-dati.php)
+Libreria sviluppata in c# per interrogare i web services dell'IPA. Per maggiore dettagli visitare il [sito iPA](https://indicepa.gov.it/ipa-portale/dati-statistiche/web-service)
 
 Per utilizzare i Web Services è necessario chiedere una specifica autorizzazione. 
-Occorre selezionare la voce del menu Richiedi Authorization ID e compilare la form dedicata al seguente [link](https://www.indicepa.gov.it/registr-user-ws/ws-registrazione-start.php)
+Occorre selezionare la voce del menu Richiedi Authorization ID e compilare la form dedicata al seguente [link](https://indicepa.gov.it/ipa-portale/dati-statistiche/web-service/richiedi-authorization-id)
+
+##### E' stato aggiunta la proprietà ValidateSchema (default = false) perchè gli schemi pubblicati su sito indicepa.gov.it non validano sempre i dati.
 
 ### Utilizzo
 
 ```csharp
 
-        myAuthId = "XXXXXXXX";
+       
 		
+		myAuthId = "XXXXXXXX";
+       // Ws01_SFE_CF.ValidateSchema = true; (default è false)
 		Ws01_SFE_CF a = new Ws01_SFE_CF("81034410609", myAuthId);
 		Ws01 aa = a.Request();
 
@@ -30,7 +34,7 @@ Occorre selezionare la voce del menu Richiedi Authorization ID e compilare la fo
 		Ws05_AMM e = new Ws05_AMM("192", myAuthId);
 		Ws05 ee = e.Request();
 
-		Ws06_OU_CODUNI f = new Ws06_OU_CODUNI("01-B5D", myAuthId);
+		Ws06_OU_COD_UNI f = new Ws06_OU_COD_UNI("01-B5D", myAuthId);
 		Ws06 ff = f.Request();
 
 		Ws07_EMAIL g = new Ws07_EMAIL("info@sdsdw.it", myAuthId);
@@ -42,10 +46,10 @@ Occorre selezionare la voce del menu Richiedi Authorization ID e compilare la fo
 		Ws08_AOOC h1 = new Ws08_AOOC("193", myAuthId);
 		Ws08 hh1 = h1.Request();
 
-		Ws09_DOM_DIG_AOO j = new Ws09_DOM_DIG_AOO("6CMVL", "AO1", myAuthId);
+		Ws09_DOMDIGAOO j = new Ws09_DOMDIGAOO("6CMVL", "AO1", myAuthId);
 		Ws09 jj = j.Request();
 
-		Ws09_DOM_DIG_AOO j1 = new Ws09_DOM_DIG_AOO("6CMVL", myAuthId);
+		Ws09_DOMDIGAOO j1 = new Ws09_DOMDIGAOO("6CMVL", myAuthId);
 		Ws09 jj1 = j1.Request();
 
 		Ws10_DOM_DIG_OU o = new Ws10_DOM_DIG_OU("1BGMYH", myAuthId);
@@ -71,6 +75,9 @@ Occorre selezionare la voce del menu Richiedi Authorization ID e compilare la fo
 
 		Ws16_DES_AMM v2 = new Ws16_DES_AMM("asdfdfsdfsdfsdffd", myAuthId);
 		Ws16 vv2 = v2.Request();
+
+		Ws18_AOO v3 = new Ws18_AOO("asdfdfsdfsdfsdffd", myAuthId);
+		Ws18 vv3 = v3.Request();
 	   
 
 ```
@@ -78,7 +85,7 @@ Occorre selezionare la voce del menu Richiedi Authorization ID e compilare la fo
 
 ### Installazione
 ```
-	PM> Install-Package StudioAT.FatturazioneElettronica.IPA -Version 1.6.2
+	PM> Install-Package StudioAT.FatturazioneElettronica.IPA -Version 1.7.0
 ```
 dalla Console di Gestione Pacchetti di Visual Studio
 

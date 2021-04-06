@@ -51,13 +51,13 @@
         /// <summary>
         /// Nome Ente
         /// </summary>
-        [JsonProperty("des_amm", Required = Required.Always)]
+        [JsonProperty("des_Amm", Required = Required.Always)]
         public string DesAmm { get; set; }
 
         /// <summary>
         /// Nome dell'AOO
         /// </summary>
-        [JsonProperty("des_aoo", Required = Required.Always)]
+        [JsonProperty("des_aoo", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
         public string DesAoo { get; set; }
 
         /// <summary>

@@ -102,15 +102,7 @@
                 "required": [
                     "cod_amm",
                     "cod_aoo",
-                    "des_aoo",
-                    "regione",
-                    "provincia",
-                    "comune",
-                    "cap",
-                    "indirizzo",
-                    "mail1",
-                    "nome_resp",
-                    "cogn_resp"
+                    "nome_resp"
                 ]
             }
         }

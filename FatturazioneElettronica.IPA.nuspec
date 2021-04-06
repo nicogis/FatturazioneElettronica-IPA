@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>$id$</id>
-    <version>1.6.1</version>
+    <version>1.7.0</version>
     <title>Fatturazione elettronica - IPA</title>
     <authors>nicogis</authors>
     <owners>Studio A&amp;T s.r.l.</owners>
@@ -10,8 +10,8 @@
     <projectUrl>https://nicogis.github.io/FatturazioneElettronica-IPA</projectUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>Client per web services IPA (Indice delle Pubblice Amministrazioni)</description>
-    <releaseNotes>Web services allienata alla documentazione tecnica versione 1.6 IPA</releaseNotes>
-    <copyright>Copyright 2020</copyright>
+    <releaseNotes>Libreria allineata ai ws della documentazione tecnica versione 1.7 IPA</releaseNotes>
+    <copyright>Copyright 2021</copyright>
     <tags>IPA FatturazioneElettronica nicogis</tags>
   </metadata>
 </package>

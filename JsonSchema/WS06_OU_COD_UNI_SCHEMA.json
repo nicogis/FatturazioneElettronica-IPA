@@ -105,15 +105,15 @@
                         "description": "Stato del canale di fatturazione; A:Attivo|V=In fase di validazione"
                     },
                     "cf": {
-                        "type": "string",
+                        "type": ["string", "null"],
                         "description": "Codice fiscale del servizio di faturazione"
                     },
                     "dt_verifica_cf": {
-                        "type": "string",
+                        "type": ["string", "null"],
                         "description": "Data di validazione del cf del servizio di fatturazione"
                     },
                     "dat_val_canale_trasm_sfe": {
-                        "type": "string",
+                        "type": ["string", "null"],
                         "description": "Data di inizio validità del servizio di fatturazione"
                     },
                     "stato_canale_nso": {
@@ -136,14 +136,8 @@
                 "required": [
                     "cod_amm",
                     "cod_uni_ou",
-                    "des_ou",
-                    "regione",
-                    "provincia",
-                    "comune",
-                    "cap",
-                    "indirizzo",
-                    "nome_resp",
-                    "cogn_resp"
+                    "cf",
+                    "cf_nso"
                 ]
         }        
     },

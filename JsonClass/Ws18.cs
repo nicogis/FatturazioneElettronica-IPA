@@ -1,30 +1,21 @@
-﻿//-----------------------------------------------------------------------
-// <copyright file="Ws02.cs" company="Studio A&T s.r.l.">
-//     Copyright (c) Studio A&T s.r.l. All rights reserved.
-// </copyright>
-// <author>Nicogis</author>
-//-----------------------------------------------------------------------
-namespace FatturazioneElettronica.IPA
+﻿namespace FatturazioneElettronica.IPA
 {
     using Newtonsoft.Json;
     using System.Collections.Generic;
 
     /// <summary>
-    /// Questo servizio web consente di estrarre dall' iPA informazioni su tutte le aree organizzative omogenee associate al codice iPA fornito. 
-    /// Il servizio consente, inoltre, di impostare come parametro di ricerca anche il codice AOO, oltre il codice iPA. 
-    /// Si tenga presente che nel caso in cui l'utente fornisca congiuntamente i due codici (codice iPA e codice AOO) dalla ricerca potrà essere estratta solo 
-    /// ed esclusivamente una Area Organizzativa Omogenea. 
+    /// Questo servizio web consente di estrarre dall'iPA informazioni relative ad una Area Organizzativa Omogenea
     /// </summary>
-    public partial class Ws02: WsJson
+    public partial class Ws18 : WsJson
     {
         [JsonProperty("data")]
-        public List<DataWs02> Data { get; set; }
+        public List<DataWs18> Data { get; set; }
 
         [JsonProperty("result", Required = Required.Always)]
         public Result Result { get; set; }
     }
 
-    public partial class DataWs02
+    public partial class DataWs18
     {
         /// <summary>
         /// Cap registrato in IPA per la sede dell'AOO
@@ -35,14 +26,20 @@ namespace FatturazioneElettronica.IPA
         /// <summary>
         /// Codice Ente accreditato in IPA
         /// </summary>
-        [JsonProperty("cod_amm", Required = Required.Always)]
+        [JsonProperty("cod_amm", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
         public string CodAmm { get; set; }
 
         /// <summary>
         /// Codice AOO
         /// </summary>
-        [JsonProperty("cod_aoo", Required = Required.Always)]
+        [JsonProperty("cod_aoo", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
         public string CodAoo { get; set; }
+
+        /// <summary>
+        /// Codice univoco AOO
+        /// </summary>
+        [JsonProperty("cod_uni_aoo", Required = Required.Always)]
+        public string CodUniAoo { get; set; }
 
         /// <summary>
         /// Cognome del responsabile dell'AOO
@@ -63,7 +60,7 @@ namespace FatturazioneElettronica.IPA
         public string DesAoo { get; set; }
 
         /// <summary>
-        /// Numero di fax registrato in IPA per dell'AOO
+        /// Numero di fax registrato in IPA per dell’AOO
         /// </summary>
         [JsonProperty("fax", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
         public string Fax { get; set; }
@@ -75,19 +72,19 @@ namespace FatturazioneElettronica.IPA
         public string Indirizzo { get; set; }
 
         /// <summary>
-        /// Indirizzo email primario associato all'AOO
+        /// Indirizzo email primario associato all’AOO
         /// </summary>
         [JsonProperty("mail1", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
         public string Mail1 { get; set; }
 
         /// <summary>
-        /// Indirizzo email associato all'AOO
+        /// Indirizzo email associato all’AOO
         /// </summary>
         [JsonProperty("mail2", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
         public string Mail2 { get; set; }
 
         /// <summary>
-        /// Indirizzo email associato all'AOO
+        /// Indirizzo email associato all’AOO
         /// </summary>
         [JsonProperty("mail3", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
         public string Mail3 { get; set; }
@@ -101,7 +98,7 @@ namespace FatturazioneElettronica.IPA
         /// <summary>
         /// Nome del responsabile dell'AOO
         /// </summary>
-        [JsonProperty("nome_resp", Required = Required.Always)]
+        [JsonProperty("nome_resp", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
         public string NomeResp { get; set; }
 
         /// <summary>
@@ -117,7 +114,7 @@ namespace FatturazioneElettronica.IPA
         public string Regione { get; set; }
 
         /// <summary>
-        /// Numero di telefono registrato in IPA per dell'AOO
+        /// Numero di telefono registrato in IPA per dell’AOO
         /// </summary>
         [JsonProperty("tel", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
         public string Tel { get; set; }

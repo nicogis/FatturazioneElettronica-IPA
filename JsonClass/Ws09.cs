@@ -21,7 +21,7 @@
         /// <summary>
         /// Cap registrato in IPA per la sede dell'AOO
         /// </summary>
-        [JsonProperty("cap", Required = Required.Always)]
+        [JsonProperty("cap", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
         public string Cap { get; set; }
 
         /// <summary>
@@ -39,7 +39,7 @@
         /// <summary>
         /// Comune registrato in IPA per la sede dell'AOO
         /// </summary>
-        [JsonProperty("comune", Required = Required.Always)]
+        [JsonProperty("comune", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
         public string Comune { get; set; }
 
         /// <summary>
@@ -57,7 +57,7 @@
         /// <summary>
         /// Nome dell'AOO
         /// </summary>
-        [JsonProperty("des_aoo", Required = Required.Always)]
+        [JsonProperty("des_aoo", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
         public string DesAoo { get; set; }
 
         /// <summary>
@@ -75,19 +75,19 @@
         /// <summary>
         /// Indirizzo postale registrato in IPA per la sede dell'AOO
         /// </summary>
-        [JsonProperty("indirizzo", Required = Required.Always)]
+        [JsonProperty("indirizzo", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
         public string Indirizzo { get; set; }
 
         /// <summary>
         /// Provincia registrata in IPA per la sede dell'AOO
         /// </summary>
-        [JsonProperty("provincia", Required = Required.Always)]
+        [JsonProperty("provincia", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
         public string Provincia { get; set; }
 
         /// <summary>
         /// Regione registrata in IPA per la sede dell'AOO
         /// </summary>
-        [JsonProperty("regione", Required = Required.Always)]
+        [JsonProperty("regione", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
         public string Regione { get; set; }
 
         /// <summary>

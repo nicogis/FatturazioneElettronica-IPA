@@ -20,9 +20,14 @@ namespace FatturazioneElettronica.IPA
     using System.Linq;
     public abstract class Ws<T> where T : WsJson
     {      
-        private const string baseUrl = "https://www.indicepa.gov.it:443/public-ws/";
+        private const string baseUrl = "https://www.indicepa.gov.it:443/ws/";
 
         private readonly IList<KeyValuePair<string, string>> parameters = new List<KeyValuePair<string, string>>();
+
+        static Ws()
+        {
+            ValidateSchema = false;
+        }
 
         protected Ws(string authId)
         {
@@ -50,7 +55,7 @@ namespace FatturazioneElettronica.IPA
 
         protected async Task<string> SendRequest(FormUrlEncodedContent requestParameters)
         {
-            this.Endpoint = $"{this.GetType().Name.ToUpperInvariant()}.{Enum.GetName(typeof(EstensioniFile), EstensioniFile.php)}";
+            this.Endpoint = $"{this.GetType().Name.ToUpperInvariant().Replace("_", string.Empty)}Services/api/{this.GetType().Name.ToUpperInvariant()}";
 
             using (var httpClient = new HttpClient() { BaseAddress = new Uri(Ws<T>.baseUrl) })
             using (var httpResponse = await httpClient.PostAsync(this.Endpoint, requestParameters))
@@ -64,7 +69,9 @@ namespace FatturazioneElettronica.IPA
             }
 
         }
-        
+
+        public static bool ValidateSchema { get; set; }
+
         public string AuthId { get; set; }
         protected string Endpoint { get; set; }
 
@@ -77,30 +84,34 @@ namespace FatturazioneElettronica.IPA
                 FormUrlEncodedContent requestParameters = new FormUrlEncodedContent(this.parameters);
 
                 string json = this.SendRequest(requestParameters).Result;
-                JObject ws = JObject.Parse(json);
-                string result = null;
-                using (StreamReader reader = new StreamReader(Assembly.GetExecutingAssembly().GetManifestResourceStream($"{this.GetType().Namespace}.JsonSchema.{this.GetType().Name.ToUpperInvariant()}_SCHEMA.{Enum.GetName(typeof(EstensioniFile), EstensioniFile.json)}")))
-                {
-                    result = reader.ReadToEnd();
-                }
 
-                JSchema schema = JSchema.Parse(result);
+                if (string.IsNullOrWhiteSpace(json))
+                {
+                    throw new Exception("Il ws ha restituito una risposta vuota: probabilmente i parametri passati hanno caratteri non consentiti o altri problemi");
+                }
 
                 
-                bool valid = ws.IsValid(schema, out IList<string> errors);
-
-                if (valid)
+                if (Ws<T>.ValidateSchema)
                 {
-                    return Ws<T>.FromJson(json);
-                }
-                else
-                {
-                    
-                    var e = string.Join(Environment.NewLine, errors);
+                    JObject ws = JObject.Parse(json);
+                    string result = null;
+                    using (StreamReader reader = new StreamReader(Assembly.GetExecutingAssembly().GetManifestResourceStream($"{this.GetType().Namespace}.JsonSchema.{this.GetType().Name.ToUpperInvariant()}_SCHEMA.{Enum.GetName(typeof(EstensioniFile), EstensioniFile.json)}")))
+                    {
+                        result = reader.ReadToEnd();
+                    }
 
-                    throw new Exception($"Json non valido con lo schema indicato:{Environment.NewLine}{e}");
+                    JSchema schema = JSchema.Parse(result);
+
+                    if (!ws.IsValid(schema, out IList<string> errors))
+                    {
+                        var e = string.Join(Environment.NewLine, errors);
+
+                        throw new Exception($"Json non valido con lo schema indicato:{Environment.NewLine}{e}");
+                    }
                 }
 
+                return Ws<T>.FromJson(json);
+                
             }
             catch
             {

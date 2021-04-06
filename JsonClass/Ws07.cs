@@ -34,19 +34,19 @@ namespace FatturazioneElettronica.IPA
         /// <summary>
         /// Codice dell'entità
         /// </summary>
-        [JsonProperty("cod_entita", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("cod_entita", Required = Required.Always)]
         public string CodEntita { get; set; }
 
         /// <summary>
         /// Denominazione Ente accreditato in IPA
         /// </summary>
-        [JsonProperty("des_amm", Required = Required.Always)]
+        [JsonProperty("des_amm", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
         public string DesAmm { get; set; }
 
         /// <summary>
         /// Tipo email:PEC|CECPAC|ALTRO
         /// </summary>
-        [JsonProperty("tipo_email", Required = Required.Always)]
+        [JsonProperty("tipo_email", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
         public string TipoEmail { get; set; }
 
         /// <summary>

@@ -58,7 +58,7 @@
                         "type": "string",
                         "description": "Codice Ente accreditato in IPA"
                     },
-                    "des_amm": {
+                    "des_Amm": {
                         "type": "string",
                         "description": "Nome Ente "
                     },
@@ -79,9 +79,8 @@
                     "cod_ou",
                     "des_ou",
                     "cod_amm",
-                    "des_amm",
-                    "cod_aoo",
-                    "des_aoo"
+                    "des_Amm",
+                    "cod_aoo"
                 ]
             }
         }
