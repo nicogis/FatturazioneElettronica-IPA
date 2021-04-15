@@ -6,7 +6,7 @@ Libreria sviluppata in c# per interrogare i web services dell'IPA. Per maggiore 
 Per utilizzare i Web Services è necessario chiedere una specifica autorizzazione. 
 Occorre selezionare la voce del menu Richiedi Authorization ID e compilare la form dedicata al seguente [link](https://indicepa.gov.it/ipa-portale/dati-statistiche/web-service/richiedi-authorization-id)
 
-##### E' stato aggiunta la proprietà ValidateSchema (default = false) perchè gli schemi pubblicati su sito indicepa.gov.it non validano sempre i dati.
+##### E' stato aggiunta la proprietà ValidateSchema (default = false) perchè gli schemi pubblicati su sito indicepa.gov.it non validano sempre i dati e non hanno uno schema corretto (lo schema draft-07 non è rappresentato correttamente).
 
 ### Utilizzo
 
