@@ -9,7 +9,7 @@
     /// </summary>
     public partial class Ws10 : WsJson
     {
-        [JsonProperty("data")]
+        [JsonProperty("data", Required = Required.AllowNull)]
         public List<DataWs10> Data { get; set; }
 
         [JsonProperty("result", Required = Required.Always)]
@@ -57,7 +57,7 @@
         /// <summary>
         /// Nome dell'AOO
         /// </summary>
-        [JsonProperty("des_aoo", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("des_Aoo", Required = Required.Always)]
         public string DesAoo { get; set; }
 
         /// <summary>

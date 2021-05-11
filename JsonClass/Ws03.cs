@@ -14,7 +14,7 @@ namespace FatturazioneElettronica.IPA
     /// </summary>
     public partial class Ws03 :WsJson
     {
-        [JsonProperty("data")]
+        [JsonProperty("data", Required = Required.AllowNull)]
         public List<DataWs03> Data { get; set; }
 
         [JsonProperty("result", Required = Required.Always)]
@@ -26,7 +26,7 @@ namespace FatturazioneElettronica.IPA
         /// <summary>
         /// Cap registrato in IPA per la sede dell'UO
         /// </summary>
-        [JsonProperty("cap", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("cap", Required = Required.AllowNull)]
         public string Cap { get; set; }
 
         /// <summary>
@@ -50,49 +50,49 @@ namespace FatturazioneElettronica.IPA
         /// <summary>
         /// Cognome del responsabile dell'UO
         /// </summary>
-        [JsonProperty("cogn_resp", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("cogn_resp",  Required = Required.AllowNull)]
         public string CognResp { get; set; }
 
         /// <summary>
         /// Comune registrato in IPA per la sede dell'UO
         /// </summary>
-        [JsonProperty("comune", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("comune", Required = Required.AllowNull)]
         public string Comune { get; set; }
 
         /// <summary>
         /// Nome dell'UO
         /// </summary>
-        [JsonProperty("des_ou", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("des_ou", Required = Required.Always)]
         public string DesOu { get; set; }
 
         /// <summary>
         /// Numero di fax registrato in IPA per dell'UO
         /// </summary>
-        [JsonProperty("fax", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("fax", Required = Required.AllowNull)]
         public string Fax { get; set; }
 
         /// <summary>
         /// Indirizzo postale registrato in IPA per la sede dell'UO
         /// </summary>
-        [JsonProperty("indirizzo", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("indirizzo", Required = Required.AllowNull)]
         public string Indirizzo { get; set; }
 
         /// <summary>
-        /// Indirizzo email primario associato all'UO
+        /// Indirizzo email primario associato all'UO - aggiunto null
         /// </summary>
-        [JsonProperty("mail1", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("mail1", Required = Required.AllowNull)]
         public string Mail1 { get; set; }
 
         /// <summary>
-        /// Indirizzo email associato all'UO
+        /// Indirizzo email associato all'UO - aggiunto null
         /// </summary>
-        [JsonProperty("mail2", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("mail2", Required = Required.AllowNull)]
         public string Mail2 { get; set; }
 
         /// <summary>
-        /// Indirizzo email associato all'UO
+        /// Indirizzo email associato all'UO - aggiunto null
         /// </summary>
-        [JsonProperty("mail3", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("mail3", Required = Required.AllowNull)]
         public string Mail3 { get; set; }
 
         /// <summary>
@@ -104,31 +104,31 @@ namespace FatturazioneElettronica.IPA
         /// <summary>
         /// Nome del responsabile dell'UO
         /// </summary>
-        [JsonProperty("nome_resp", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("nome_resp", Required = Required.AllowNull)]
         public string NomeResp { get; set; }
 
         /// <summary>
         /// Provincia registrata in IPA per la sede dell'UO
         /// </summary>
-        [JsonProperty("provincia", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("provincia", Required = Required.AllowNull)]
         public string Provincia { get; set; }
 
         /// <summary>
         /// Regione registrata in IPA per la sede dell'UO
         /// </summary>
-        [JsonProperty("regione", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("regione", Required = Required.AllowNull)]
         public string Regione { get; set; }
 
         /// <summary>
         /// Numero di telefono registrato in IPA per dell'UO
         /// </summary>
-        [JsonProperty("tel", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("tel", Required = Required.AllowNull)]
         public string Tel { get; set; }
 
         /// <summary>
         /// Numero di telefono del responsabile dell'UO
         /// </summary>
-        [JsonProperty("tel_resp", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("tel_resp", Required = Required.AllowNull)]
         public string TelResp { get; set; }
     }
 }

@@ -1,65 +1,114 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "name": "WS07Response",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://indicepa.gov.it/ipa-files/documenti/WS07_EMAIL_SCHEMA.json",
     "type": "object",
+    "title": "WS07_EMAIL",
+    "description": "Schema della response del WS07_EMAIL",
+    "default": {},
+    "required": [
+        "result",
+        "data"
+    ],
     "properties": {
         "result": {
+            "$id": "#/properties/result",
             "type": "object",
-            "properties": {
-                "cod_err": {
-                    "type": "number",
-                    "description": "Codice di ritorno"
-                },
-                "desc_err": {
-                    "type": "string",
-                    "description": "Descrizione errore"
-                },
-                "num_items": {
-                    "type": "number",
-                    "description": "Numero di occorrenze trovate",
-                    "minimum": 0
-                }
-            },
+            "title": "result schema",
+            "description": "Racchiude parametri intrinsechi alla response",
+            "default": {},
             "required": [
                 "cod_err",
+                "desc_err",
                 "num_items"
-            ]
+            ],
+            "properties": {
+                "cod_err": {
+                    "$id": "#/properties/result/properties/cod_err",
+                    "type": "integer",
+                    "title": "cod_err schema",
+                    "description": "Codice d'errore (consultare la tabella dell'indice dei servizi)",
+                    "default": 0
+                },
+                "desc_err": {
+                    "$id": "#/properties/result/properties/desc_err",
+                    "type": "string",
+                    "title": "desc_err schema",
+                    "description": "Descrizione dell'errore corrispondente al codice d'errore",
+                    "default": ""
+                },
+                "num_items": {
+                    "$id": "#/properties/result/properties/num_items",
+                    "type": "integer",
+                    "title": "num_items schema",
+                    "description": "Numero degli elementi presenti in data",
+                    "default": 0
+                }
+            },
+            "additionalProperties": true
         },
         "data": {
-            "type": ["array", "null"],
+            "$id": "#/properties/data",
+            "type": "array",
+            "title": "data schema",
+            "description": "Contenuto informativo della response",
+            "default": [],
+            "additionalItems": true,
             "items": {
-                "type": "object",
-                "properties": {
-                    "tipo_email": {
-                        "type": "string",
-                        "description": "Tipo email:PEC|CECPAC|ALTRO"
-                    },
-                    "tipo_entita": {
-                        "type": "string",
-                        "description": "Tipo entità: AMM|AOO|UO|SERVAMM|SERVAOO|SERVOU|RESPAOO|RESPUO"
-                    },
-                    "cod_amm": {
-                        "type": "string",
-                        "description": "Codice Ente accreditato in IPA"
-                    },
-                    "des_amm": {
-                        "type": "string",
-                        "description": "Denominazione Ente accreditato in IPA"
-                    },
-                    "cod_entita": {
-                        "type": "string",
-                        "description": "Codice dell'entità"
+                "$id": "#/properties/data/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/data/items/anyOf/0",
+                        "type": "object",
+                        "default": {},                        
+                        "required": [
+                            "tipo_email",
+                            "tipo_entita",
+                            "cod_amm",
+                            "des_amm"
+                        ],
+                        "properties": {
+                            "tipo_email": {
+                                "$id": "#/properties/data/items/anyOf/0/properties/tipo_email",
+                                "type": "string",
+                                "title": "tipo_email schema",
+                                "description": "Tipo email PEC|CECPAC|ALTRO",
+                                "default": ""                                
+                            },
+                            "tipo_entita": {
+                                "$id": "#/properties/data/items/anyOf/0/properties/tipo_entita",
+                                "type": "string",
+                                "title": "tipo_entita schema",
+                                "description": "Tipo entità AMM|AOO|UO|SERVAMM|SERVAOO|SERVOU|RESPAOO|RESPUO",
+                                "default": ""                               
+                            },
+                            "cod_amm": {
+                                "$id": "#/properties/data/items/anyOf/0/properties/cod_amm",
+                                "type": "string",
+                                "title": "cod_amm schema",
+                                "description": "Codice dell'Ente come è accreditato sull' iPA",
+                                "default": ""                                
+                            },
+                            "des_amm": {
+                                "$id": "#/properties/data/items/anyOf/0/properties/des_amm",
+                                "type": "string",
+                                "title": "des_amm schema",
+                                "description": "Denominazione dell'Ente a cui l'entità risulta associata",
+                                "default": ""                                
+                            },
+                            "cod_entita": {
+                                "$id": "#/properties/data/items/anyOf/0/properties/cod_entita",
+                                "type": "string",
+                                "title": "cod_entita schema",
+                                "description": "Nei casi UO, SERVOU, RESPUO è il codice univoco dell'ufficio; nei casi: AOO, SERVAOO, RESPAOO è il codice della AOO",
+                                "default": ""
+                                
+                            }
+                        },
+                        "additionalProperties": true
                     }
-                },
-                "required": [
-                    "tipo_entita",
-                    "cod_amm",
-                    "cod_entita"
                 ]
             }
         }
     },
-    "required": [
-        "result"
-    ]
+    "additionalProperties": true
 }

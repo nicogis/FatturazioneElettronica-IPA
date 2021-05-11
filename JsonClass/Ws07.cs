@@ -16,7 +16,7 @@ namespace FatturazioneElettronica.IPA
     /// </summary>
     public partial class Ws07 : WsJson
     {
-        [JsonProperty("data")]
+        [JsonProperty("data", Required = Required.AllowNull)]
         public List<DataWs07> Data { get; set; }
 
         [JsonProperty("result", Required = Required.Always)]
@@ -34,19 +34,19 @@ namespace FatturazioneElettronica.IPA
         /// <summary>
         /// Codice dell'entità
         /// </summary>
-        [JsonProperty("cod_entita", Required = Required.Always)]
+        [JsonProperty("cod_entita", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
         public string CodEntita { get; set; }
 
         /// <summary>
         /// Denominazione Ente accreditato in IPA
         /// </summary>
-        [JsonProperty("des_amm", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("des_amm", Required = Required.Always)]
         public string DesAmm { get; set; }
 
         /// <summary>
         /// Tipo email:PEC|CECPAC|ALTRO
         /// </summary>
-        [JsonProperty("tipo_email", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("tipo_email", Required = Required.Always)]
         public string TipoEmail { get; set; }
 
         /// <summary>

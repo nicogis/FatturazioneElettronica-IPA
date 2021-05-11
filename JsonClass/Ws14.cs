@@ -8,7 +8,7 @@
     /// </summary>
     public partial class Ws14 : WsJson  
     {
-        [JsonProperty("data")]
+        [JsonProperty("data", Required = Required.AllowNull)]
         public List<DataWs14> Data { get; set; }
 
         [JsonProperty("result", Required = Required.Always)]

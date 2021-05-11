@@ -1,111 +1,194 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "name": "WS18Response",
-  "type": "object",
-  "properties": {
-     "result": {
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://indicepa.gov.it/ipa-files/documenti/WS18_AOO_SCHEMA.json",
+    "type": "object",
+    "title": "WS18_AOO",
+    "description": "Schema della response del WS18_AOO",
+    "default": {},
+    "required": [
+        "result",
+        "data"
+    ],
+    "properties": {
+        "result": {
+            "$id": "#/properties/result",
             "type": "object",
-            "properties": {
-                "cod_err": {
-                    "type": "number",
-                    "description": "Codice di ritorno"
-                },
-                "desc_err": {
-                    "type": "string",
-                    "description": "Descrizione errore"
-                },
-                "num_items": {
-                    "type": "number",
-                    "description": "Numero di occorrenze trovate",
-                    "minimum": 0
-                }
-            },
+            "title": "result schema",
+            "description": "Racchiude parametri intrinsechi alla response",
+            "default": {},
             "required": [
                 "cod_err",
+                "desc_err",
                 "num_items"
-            ]
+            ],
+            "properties": {
+                "cod_err": {
+                    "$id": "#/properties/result/properties/cod_err",
+                    "type": "integer",
+                    "title": "cod_err schema",
+                    "description": "Codice d'errore (consultare la tabella dell'indice dei servizi)",
+                    "default": 0
+                },
+                "desc_err": {
+                    "$id": "#/properties/result/properties/desc_err",
+                    "type": "string",
+                    "title": "desc_err schema",
+                    "description": "Descrizione dell'errore corrispondente al codice d'errore",
+                    "default": ""
+                },
+                "num_items": {
+                    "$id": "#/properties/result/properties/num_items",
+                    "type": "integer",
+                    "title": "num_items schema",
+                    "description": "Numero degli elementi presenti in data",
+                    "default": 0
+                }
+            },
+            "additionalProperties": true
         },
         "data": {
-            "type": ["array", "null"],
-            "items": {
+            "$id": "#/properties/data",
+            "type": "object",
+            "title": "data schema",
+            "description": "Contenuto informativo della response",
+            "default": {},            
+            "required": [
+                "cod_uni_aoo",
+                "cod_amm",
+                "cod_aoo",
+                "des_aoo"
+            ],
+            "properties": {
                 "cod_uni_aoo": {
-      "type": "string",
-      "description": "Codice univoco AOO"
+                    "$id": "#/properties/data/properties/cod_uni_aoo",
+                    "type": "string",
+                    "title": "cod_uni_aoo schema",
+                    "description": "Codice univoco dell'Area organizzativa Omogenea",
+                    "default": ""
+                },
+                "cod_amm": {
+                    "$id": "#/properties/data/properties/cod_amm",
+                    "type": "string",
+                    "title": "cod_amm schema",
+                    "description": "Codice dell'Ente come è accreditato sull'iPA",
+                    "default": ""                    
+                },
+                "cod_aoo": {
+                    "$id": "#/properties/data/properties/cod_aoo",
+                    "type": "string",
+                    "title": "cod_aoo schema",
+                    "description": "Codice dell'Area organizzativa Omogenea",
+                    "default": ""
+                },
+                "des_aoo": {
+                    "$id": "#/properties/data/properties/des_aoo",
+                    "type": "string",
+                    "title": "des_aoo schema",
+                    "description": "Denominazione dell'Area Organizzativa Omogenea",
+                    "default": ""
+                },
+                "regione": {
+                    "$id": "#/properties/data/properties/regione",
+                    "type": ["string", "null"],
+                    "title": "regione schema",
+                    "description": "Regione registrata in iPA per la sede dell'Area Organizzativa Omogenea",
+                    "default": null
+                },
+                "provincia": {
+                    "$id": "#/properties/data/properties/provincia",
+                    "type": ["string", "null"],
+                    "title": "provincia schema",
+                    "description": "Provincia registrata in iPA per la sede dell'Area Organizzativa Omogenea",
+                    "default": null
+                },
+                "comune": {
+                    "$id": "#/properties/data/properties/comune",
+                    "type": ["string", "null"],
+                    "title": "comune schema",
+                    "description": "Comune registrato in iPA per la sede dell'Area Organizzativa Omogenea",
+                    "default": null
+                },
+                "cap": {
+                    "$id": "#/properties/data/properties/cap",
+                    "type": ["string", "null"],
+                    "title": "cap schema",
+                    "description": "Codice di avviamento postale registrato in iPA per la sede dell'Area Organizzativa Omogenea",
+                    "default": null
+                },
+                "indirizzo": {
+                    "$id": "#/properties/data/properties/indirizzo",
+                    "type": ["string", "null"],
+                    "title": "indirizzo schema",
+                    "description": "Indirizzo postale registrato in iPA per la sede dell'Area Organizzativa Omogenea",
+                    "default": null
+                },
+                "tel": {
+                    "$id": "#/properties/data/properties/tel",
+                    "type": ["string", "null"],
+                    "title": "tel schema",
+                    "description": "Numero di telefono registrato in iPA per l'Area Organizzativa Omogenea",
+                    "default": null
+                },
+                "fax": {
+                    "$id": "#/properties/data/properties/fax",
+                    "type": ["string", "null"],
+                    "title": "fax schema",
+                    "description": "Numero di fax registrato in iPA per l'Area Organizzativa Omogenea",
+                    "default": null
+                    
+                },
+                "mail1": {
+                    "$id": "#/properties/data/properties/mail1",
+                    "type": ["string", "null"],
+                    "title": "mail1 schema",
+                    "description": "Indirizzo email associato all'Area Organizzativa Omogenea di tipo PEC",
+                    "default": null
+                },
+                "mail2": {
+                    "$id": "#/properties/data/properties/mail2",
+                    "type": ["string", "null"],
+                    "title": "mail2 schema",
+                    "description": "Indirizzo email associato all'Area Organizzativa Omogenea di tipo PEC",
+                    "default": null
+                },
+                "mail3": {
+                    "$id": "#/properties/data/properties/mail3",
+                    "type": ["string", "null"],
+                    "title": "mail3 schema",
+                    "description": "Indirizzo email associato all'Area Organizzativa Omogenea di tipo PEC",
+                    "default": null
+                },
+                "nome_resp": {
+                    "$id": "#/properties/data/properties/nome_resp",
+                    "type": ["string", "null"],
+                    "title": "nome_resp schema",
+                    "description": "Nome del responsabile dell'Area Organizzativa Omogenea",
+                    "default": null
+                },
+                "cogn_resp": {
+                    "$id": "#/properties/data/properties/cogn_resp",
+                    "type": ["string", "null"],
+                    "title": "cogn_resp schema",
+                    "description": "Cognome del responsabile dell'Area Organizzativa Omogenea",
+                    "default": null
+                },
+                "mail_resp": {
+                    "$id": "#/properties/data/properties/mail_resp",
+                    "type": ["string", "null"],
+                    "title": "mail_resp schema",
+                    "description": "Indirizzo email del responsabile dell'Area Organizzativa Omogenea",
+                    "default": null
+                },
+                "tel_resp": {
+                    "$id": "#/properties/data/properties/tel_resp",
+                    "type": ["string", "null"],
+                    "title": "tel_resp schema",
+                    "description": "Numero di telefono del responsabile dell'Area Organizzativa Omogenea",
+                    "default": null
+                }
+            },
+            "additionalProperties": true
+        }
     },
-    "cod_amm": {
-      "type": "string",
-      "description": "Codice Ente accreditato in IPA"
-    },
-    "cod_aoo": {
-      "type": "string",
-      "description": "Codice AOO"
-    },
-    "des_aoo": {
-      "type": "string",
-      "description": "Nome dell'AOO"
-    },
-    "regione": {
-      "type": "string",
-      "description": "Regione registrata in IPA per la sede dell'AOO"
-    },
-    "provincia": {
-      "type": "string",
-      "description": "Provincia registrata in IPA per la sede dell'AOO"
-    },
-    "comune": {
-      "type": "string",
-      "description": "Comune registrato in IPA per la sede dell'AOO"
-    },
-    "cap": {
-      "type": "string",
-      "description": "Cap registrato in IPA per la sede dell'AOO"
-    },
-    "indirizzo": {
-      "type": "string",
-      "description": "Indirizzo postale registrato in IPA per la sede dell'AOO"
-    },
-    "tel": {
-      "type": "string",
-      "description": "Numero di telefono registrato in IPA per dell’AOO"
-    },
-    "fax": {
-      "type": "string",
-      "description": "Numero di fax registrato in IPA per dell’AOO"
-    },
-    "mail1": {
-      "type": "string",
-      "description": "Indirizzo email primario associato all’AOO"
-    },
-    "mail2": {
-      "type": "string",
-      "description": "Indirizzo email associato all’AOO"
-    },
-    "mail3": {
-      "type": "string",
-      "description": "Indirizzo email associato all’AOO"
-    },
-    "nome_resp": {
-      "type": "string",
-      "description": "Nome del responsabile dell'AOO"
-    },
-    "cogn_resp": {
-      "type": "string",
-      "description": "Cognome del responsabile dell'AOO"
-    },
-    "mail_resp": {
-      "type": "string",
-      "description": "Indirizzo email del responsabile dell'AOO"
-    },
-    "tel_resp": {
-      "type": "string",
-      "description": "Numero di telefono del responsabile dell'AOO"
-    }
-  },
-  "required": [ "cod_uni_aoo" ]
-            }
-        
-    },
-    "required": [
-        "result"
-    ]
+    "additionalProperties": true
 }

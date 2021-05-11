@@ -1,0 +1,248 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://indicepa.gov.it/ipa-files/documenti/WS06_OU_CODUNI_SCHEMA.json",
+    "type": "object",
+    "title": "WS06_OU_CODUNI",
+    "description": "Schema della response del WS06_OU_CODUNI",
+    "default": {},
+    "required": [
+        "result",
+        "data"
+    ],
+    "properties": {
+        "result": {
+            "$id": "#/properties/result",
+            "type": "object",
+            "title": "result schema",
+            "description": "Racchiude parametri intrinsechi alla response",
+            "default": {},
+            "required": [
+                "cod_err",
+                "desc_err",
+                "num_items"
+            ],
+            "properties": {
+                "cod_err": {
+                    "$id": "#/properties/result/properties/cod_err",
+                    "type": "integer",
+                    "title": "cod_err schema",
+                    "description": "Codice d'errore (consultare la tabella dell'indice dei servizi)",
+                    "default": 0
+                },
+                "desc_err": {
+                    "$id": "#/properties/result/properties/desc_err",
+                    "type": "string",
+                    "title": "desc_err schema",
+                    "description": "Descrizione dell'errore corrispondente al codice d'errore",
+                    "default": ""
+                },
+                "num_items": {
+                    "$id": "#/properties/result/properties/num_items",
+                    "type": "integer",
+                    "title": "num_items schema",
+                    "description": "Numero degli elementi presenti in data",
+                    "default": 0
+                }
+            },
+            "additionalProperties": true
+        },
+        "data": {
+            "$id": "#/properties/data",
+            "type": "object",
+            "title": "data schema",
+            "description": "Contenuto informativo della response",
+            "default": {},           
+            "required": [
+                "cod_amm",
+                "cod_uni_ou",
+                "des_ou"
+            ],
+            "properties": {
+                "cod_amm": {
+                    "$id": "#/properties/data/properties/cod_amm",
+                    "type": "string",
+                    "title": "cod_amm schema",
+                    "description": "Codice dell'Ente come è accreditato sull'iPA",
+                    "default": ""
+                },
+                "cod_uni_ou": {
+                    "$id": "#/properties/data/properties/cod_uni_ou",
+                    "type": "string",
+                    "title": "cod_uni_ou schema",
+                    "description": "Codice Univoco dell'Unità Organizzativa",
+                    "default": ""
+                },
+                "cod_aoo": {
+                    "$id": "#/properties/data/properties/cod_aoo",
+                    "type": "string",
+                    "title": "cod_aoo schema",
+                    "description": "Codice dell'Area organizzativa Omogenea",
+                    "default": ""
+                },
+                "des_ou": {
+                    "$id": "#/properties/data/properties/des_ou",
+                    "type": "string",
+                    "title": "des_ou schema",
+                    "description": "Denominazione dell'Unità Organizzativa",
+                    "default": ""
+                },
+                "regione": {
+                    "$id": "#/properties/data/properties/regione",
+                    "type": "string",
+                    "title": "regione schema",
+                    "description": "Regione registrata in iPA per la sede dell'Unità Organizzativa",
+                    "default": ""
+                },
+                "provincia": {
+                    "$id": "#/properties/data/properties/provincia",
+                    "type": "string",
+                    "title": "provincia schema",
+                    "description": "Provincia registrata in iPA per la sede dell'Unità Organizzativa",
+                    "default": ""
+                },
+                "comune": {
+                    "$id": "#/properties/data/properties/comune",
+                    "type": "string",
+                    "title": "comune schema",
+                    "description": "Comune registrato in iPA per la sede dell'Unità Organizzativa",
+                    "default": ""
+                },
+                "cap": {
+                    "$id": "#/properties/data/properties/cap",
+                    "type": "string",
+                    "title": "cap schema",
+                    "description": "Codice di avviamento postale registrato in iPA per la sede dell'Unità Organizzativa",
+                    "default": ""
+                },
+                "indirizzo": {
+                    "$id": "#/properties/data/properties/indirizzo",
+                    "type": "string",
+                    "title": "indirizzo schema",
+                    "description": "Indirizzo postale registrato in iPA per la sede dell'Unità Organizzativa",
+                    "default": ""
+                },
+                "tel": {
+                    "$id": "#/properties/data/properties/tel",
+                    "type": "string",
+                    "title": "tel schema",
+                    "description": "Numero di telefono registrato in iPA per l'Unità Organizzativa",
+                    "default": ""
+                },
+                "fax": {
+                    "$id": "#/properties/data/properties/fax",
+                    "type": "string",
+                    "title": "fax schema",
+                    "description": "Numero di fax registrato in iPA per l'Unità Organizzativa",
+                    "default": ""
+                },
+                "mail1": {
+                    "$id": "#/properties/data/properties/mail1",
+                    "type": "string",
+                    "title": "mail1 schema",
+                    "description": "Indirizzo email associato all'Unità Organizzativa di tipo PEC|CECPAC|ALTRO",
+                    "default": ""
+                },
+                "mail2": {
+                    "$id": "#/properties/data/properties/mail2",
+                    "type": "string",
+                    "title": "mail2 schema",
+                    "description": "Indirizzo email associato all'Unità Organizzativa di tipo PEC|CECPAC|ALTRO",
+                    "default": ""
+                },
+                "mail3": {
+                    "$id": "#/properties/data/properties/mail3",
+                    "type": "string",
+                    "title": "mail3 schema",
+                    "description": "Indirizzo email associato all'Unità Organizzativa di tipo PEC|CECPAC|ALTRO",
+                    "default": ""
+                },
+                "nome_resp": {
+                    "$id": "#/properties/data/properties/nome_resp",
+                    "type": "string",
+                    "title": "nome_resp schema",
+                    "description": "Nome del responsabile dell'Unità Organizzativa",
+                    "default": ""
+                },
+                "cogn_resp": {
+                    "$id": "#/properties/data/properties/cogn_resp",
+                    "type": "string",
+                    "title": "cogn_resp schema",
+                    "description": "Cognome del responsabile dell'Unità Organizzativa",
+                    "default": ""
+                },
+                "mail_resp": {
+                    "$id": "#/properties/data/properties/mail_resp",
+                    "type": "string",
+                    "title": "mail_resp schema",
+                    "description": "Indirizzo email del responsabile dell'Unità Organizzativa",
+                    "default": ""
+                },
+                "tel_resp": {
+                    "$id": "#/properties/data/properties/tel_resp",
+                    "type": "string",
+                    "title": "tel_resp schema",
+                    "description": "Numero di telefono del responsabile dell'Unità Organizzativa",
+                    "default": ""
+                },
+                "stato_canale": {
+                    "$id": "#/properties/data/properties/stato_canale",
+                    "type": "string",
+                    "title": "stato_canale schema",
+                    "description": "Stato del Canale di Fatturazione Elettronica",
+                    "default": ""
+                },
+                "cf": {
+                    "$id": "#/properties/data/properties/cf",
+                    "type": "string",
+                    "title": "cf schema",
+                    "description": "Codice fiscale associato al Servizio di Fatturazione Elettronica, valorizzato con un codice fiscale di persona giuridica o un codice fiscale di persona fisica",
+                    "default": ""
+                },
+                "dt_verifica_cf": {
+                    "$id": "#/properties/data/properties/dt_verifica_cf",
+                    "type": ["string", "null"],
+                    "title": "dt_verifica_cf schema",
+                    "description": "Data di validazione del codice fiscale del Servizio di Fatturazione Elettronica",
+                    "default": null
+                },
+                "dat_val_canale_trasm_sfe": {
+                    "$id": "#/properties/data/properties/dat_val_canale_trasm_sfe",
+                    "type": ["string", "null"],
+                    "title": "dat_val_canale_trasm_sfe schema",
+                    "description": "Data di inizio validità del Servizio di Fatturazione Elettronica",
+                    "default": null
+                },
+                "stato_canale_nso": {
+                    "$id": "#/properties/data/properties/stato_canale_nso",
+                    "type": "string",
+                    "title": "stato_canale_nso schema",
+                    "description": "Stato del Canale di Smistamento Ordini",
+                    "default": ""
+                },
+                "cf_nso": {
+                    "$id": "#/properties/data/properties/cf_nso",
+                    "type": "string",
+                    "title": "cf_nso schema",
+                    "description": "Codice fiscale associato al Nodo di Smistamento Ordini",
+                    "default": ""
+                },
+                "dt_verifica_cf_nso": {
+                    "$id": "#/properties/data/properties/dt_verifica_cf_nso",
+                    "type": ["string", "null"],
+                    "title": "dt_verifica_cf_nso schema",
+                    "description": "Data di validazione del codice fiscale del Nodo di Smistamento Ordini",
+                    "default": null
+                },
+                "dat_val_canale_trasm_nso": {
+                    "$id": "#/properties/data/properties/dat_val_canale_trasm_nso",
+                    "type": ["string", "null"],
+                    "title": "dat_val_canale_trasm_nso schema",
+                    "description": "Data di inizio validità del Nodo di Smistamento Ordini",
+                    "default": null
+                }
+            },
+            "additionalProperties": true
+        }
+    },
+    "additionalProperties": true
+}

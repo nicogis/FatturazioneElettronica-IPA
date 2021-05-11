@@ -14,7 +14,7 @@ namespace FatturazioneElettronica.IPA
     /// </summary>
     public partial class Ws05 :WsJson
     {
-        [JsonProperty("data")]
+        [JsonProperty("data", Required = Required.AllowNull)]
         public DataWs05 Data { get; set; }
 
         [JsonProperty("result", Required = Required.Always)]
@@ -26,25 +26,25 @@ namespace FatturazioneElettronica.IPA
         /// <summary>
         /// Acronimo dell'Ente
         /// </summary>
-        [JsonProperty("acronimo", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("acronimo", Required = Required.AllowNull)]
         public string Acronimo { get; set; }
 
         /// <summary>
         /// Cap registrato in IPA per la sede legale dell'Ente
         /// </summary>
-        [JsonProperty("cap", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("cap", Required = Required.Always)]
         public string Cap { get; set; }
 
         /// <summary>
         /// Categoria dell'Ente in IPA
         /// </summary>
-        [JsonProperty("categoria", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("categoria", Required = Required.Always)]
         public string Categoria { get; set; }
 
         /// <summary>
         /// Codice fiscale dell'Ente
         /// </summary>
-        [JsonProperty("cf", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("cf", Required = Required.Always)]
         public string Cf { get; set; }
 
         /// <summary>
@@ -56,37 +56,37 @@ namespace FatturazioneElettronica.IPA
         /// <summary>
         /// Cognome del responsabile dell'Ente
         /// </summary>
-        [JsonProperty("cogn_resp", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("cogn_resp", Required = Required.Always)]
         public string CognResp { get; set; }
 
         /// <summary>
         /// Comune registrato in IPA per la sede legale dell'Ente
         /// </summary>
-        [JsonProperty("comune", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("comune", Required = Required.Always)]
         public string Comune { get; set; }
 
         /// <summary>
         /// Data di accreditamento dell'Ente
         /// </summary>
-        [JsonProperty("data_accreditamento", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("data_accreditamento", Required = Required.Always)]
         public string DataAccreditamento { get; set; }
 
         /// <summary>
         /// Denominazione Ente accreditato in IPA
         /// </summary>
-        [JsonProperty("des_amm", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("des_amm", Required = Required.Always)]
         public string DesAmm { get; set; }
 
         /// <summary>
         /// Indirizzo postale registrato in IPA per la sede legale dell'Ente
         /// </summary>
-        [JsonProperty("indirizzo", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("indirizzo", Required = Required.Always)]
         public string Indirizzo { get; set; }
 
         /// <summary>
         /// livello di accessibilità del sito dell'Ente
         /// </summary>
-        [JsonProperty("liv_accessibili", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("liv_access", Required = Required.AllowNull)]
         public double? LivAccessibili { get; set; }
 
         /// <summary>
@@ -122,37 +122,37 @@ namespace FatturazioneElettronica.IPA
         /// <summary>
         /// Nome del responsabile dell'Ente
         /// </summary>
-        [JsonProperty("nome_resp", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("nome_resp", Required = Required.Always)]
         public string NomeResp { get; set; }
 
         /// <summary>
         /// Provincia registrata in IPA per la sede legale dell'Ente
         /// </summary>
-        [JsonProperty("provincia", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("provincia", Required = Required.Always)]
         public string Provincia { get; set; }
 
         /// <summary>
         /// Regione registrata in IPA per la sede legale dell'Ente
         /// </summary>
-        [JsonProperty("regione", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("regione", Required = Required.Always)]
         public string Regione { get; set; }
 
         /// <summary>
         /// Sito istituzionale dell'Ente
         /// </summary>
-        [JsonProperty("sito_istituzionale", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("sito_istituzionale", Required = Required.AllowNull)]
         public string SitoIstituzionale { get; set; }
 
         /// <summary>
         /// Tipologia dell’Ente in IPA
         /// </summary>
-        [JsonProperty("tipologia", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("tipologia", Required = Required.Always)]
         public string Tipologia { get; set; }
 
         /// <summary>
         /// Titolo del responsabile dell'Ente
         /// </summary>
-        [JsonProperty("titolo_resp", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("titolo_resp", Required = Required.Always)]
         public string TitoloResp { get; set; }
     }
 

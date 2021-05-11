@@ -1,128 +1,231 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "name": "WS05Response",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://indicepa.gov.it/ipa-files/documenti/WS05_AMM_SCHEMA.json",
     "type": "object",
+    "title": "WS05_AMM",
+    "description": "Schema della response del WS05_AMM",
+    "default": {},
+    "required": [
+        "result",
+        "data"
+    ],
     "properties": {
         "result": {
+            "$id": "#/properties/result",
             "type": "object",
-            "properties": {
-                "cod_err": {
-                    "type": "number",
-                    "description": "Codice di ritorno"
-                },
-                "desc_err": {
-                    "type": "string",
-                    "description": "Descrizione errore"
-                },
-                "num_items": {
-                    "type": "number",
-                    "description": "Numero di occorrenze trovate",
-                    "minimum": 0
-                }
-            },
+            "title": "result schema",
+            "description": "Racchiude parametri intrinsechi alla response",
+            "default": {},
             "required": [
                 "cod_err",
+                "desc_err",
                 "num_items"
-            ]
+            ],
+            "properties": {
+                "cod_err": {
+                    "$id": "#/properties/result/properties/cod_err",
+                    "type": "integer",
+                    "title": "cod_err schema",
+                    "description": "Codice d'errore (consultare la tabella dell'indice dei servizi)",
+                    "default": 0
+                },
+                "desc_err": {
+                    "$id": "#/properties/result/properties/desc_err",
+                    "type": "string",
+                    "title": "desc_err schema",
+                    "description": "Descrizione dell'errore corrispondente al codice d'errore",
+                    "default": ""
+                },
+                "num_items": {
+                    "$id": "#/properties/result/properties/num_items",
+                    "type": "integer",
+                    "title": "num_items schema",
+                    "description": "Numero degli elementi presenti in data",
+                    "default": 0
+                }
+            },
+            "additionalProperties": true
         },
         "data": {
-                "type": ["object", "null"],
-                "properties": {
-                    "cod_amm": {
-                        "type": "string",
-                        "description": "Codice Ente accreditato in IPA"
-                    },
-                    "acronimo": {
-                        "type": "string",
-                        "description": "Acronimo dell'Ente"
-                    },
-                    "des_amm": {
-                        "type": "string",
-                        "description": "Denominazione Ente accreditato in IPA"
-                    },
-                    "regione": {
-                        "type": "string",
-                        "description": "Regione registrata in IPA per la sede legale dell'Ente"
-                    },
-                    "provincia": {
-                        "type": "string",
-                        "description": "Provincia registrata in IPA per la sede legale dell'Ente"
-                    },
-                    "comune": {
-                        "type": "string",
-                        "description": "Comune registrato in IPA per la sede legale dell'Ente"
-                    },
-                    "cap": {
-                        "type": "string",
-                        "description": "Cap registrato in IPA per la sede legale dell'Ente"
-                    },
-                    "indirizzo": {
-                        "type": "string",
-                        "description": "Indirizzo postale registrato in IPA per la sede legale dell'Ente"
-                    },
-                    "titolo_resp": {
-                        "type": "string",
-                        "description": "Titolo del responsabile dell'Ente"
-                    },
-                    "nome_resp": {
-                        "type": "string",
-                        "description": "Nome del responsabile dell'Ente"
-                    },
-                    "cogn_resp": {
-                        "type": "string",
-                        "description": "Cognome del responsabile dell'Ente"
-                    },
-                    "sito_istituzionale": {
-                        "type": "string",
-                        "description": "Sito istituzionale dell'Ente"
-                    },
-                    "liv_accessibili": {
-                        "type": "number",
-                        "description": "livello di accessibilità del sito dell'Ente"
-                    },
-                    "mail1": {
-                        "type": "string",
-                        "description": "Indirizzo email primario associato all’Ente di tipo PEC|CECPAC"
-                    },
-                    "mail2": {
-                        "type": "string",
-                        "description": "Indirizzo email associato all’Ente"
-                    },
-                    "mail3": {
-                        "type": "string",
-                        "description": "Indirizzo email associato all’Ente"
-                    },
-                    "mail4": {
-                        "type": "string",
-                        "description": "Indirizzo email primario associato all’Ente"
-                    },
-                    "mail5": {
-                        "type": "string",
-                        "description": "Indirizzo email associato all’Ente"
-                    },
-                    "tipologia": {
-                        "type": "string",
-                        "description": "Tipologia dell’Ente in IPA"
-                    },
-                    "categoria": {
-                        "type": "string",
-                        "description": "Categoria dell'Ente in IPA"
-                    },
-                    "data_accreditamento": {
-                        "type": "string",
-                        "description": "Data di accreditamento dell'Ente"
-                    },
-                    "cf": {
-                        "type": "string",
-                        "description": "Codice fiscale dell'Ente"
-                    }
+            "$id": "#/properties/data",
+            "type": "object",
+            "title": "data schema",
+            "description": "Contenuto informativo della response",
+            "default": {},
+            "required": [
+                "cod_amm",
+                "des_amm",
+                "regione",
+                "provincia",
+                "comune",
+                "cap",
+                "indirizzo",
+                "titolo_resp",
+                "nome_resp",
+                "cogn_resp",
+                "tipologia",
+                "categoria",
+                "data_accreditamento",
+                "cf"
+            ],
+            "properties": {
+                "cod_amm": {
+                    "$id": "#/properties/data/items/anyOf/0/properties/cod_amm",
+                    "type": "string",
+                    "title": "cod_amm schema",
+                    "description": "Codice dell'Ente come è accreditato sull'iPA",
+                    "default": ""
                 },
-                "required": [
-                    "cod_amm"
-                ]
-        }        
+                "acronimo": {
+                    "$id": "#/properties/data/properties/acronimo",
+                    "type": ["string", "null"],
+                    "title": "acronimo schema",
+                    "description": "Acronimo dell'Ente",
+                    "default": null
+                },
+                "des_amm": {
+                    "$id": "#/properties/data/properties/des_amm",
+                    "type": "string",
+                    "title": "des_amm schema",
+                    "description": "Denominazione dell'Ente",
+                    "default": ""
+                },
+                "regione": {
+                    "$id": "#/properties/data/properties/regione",
+                    "type": "string",
+                    "title": "regione schema",
+                    "description": "Regione registrata in iPA per la sede legale dell'Ente",
+                    "default": ""
+                },
+                "provincia": {
+                    "$id": "#/properties/data/properties/provincia",
+                    "type": "string",
+                    "title": "provincia schema",
+                    "description": "Provincia registrata in iPA per la sede legale dell'Ente",
+                    "default": ""
+                },
+                "comune": {
+                    "$id": "#/properties/data/properties/comune",
+                    "type": "string",
+                    "title": "comune schema",
+                    "description": "Comune registrato in iPA per la sede legale dell'Ente",
+                    "default": ""
+                },
+                "cap": {
+                    "$id": "#/properties/data/properties/cap",
+                    "type": "string",
+                    "title": "cap schema",
+                    "description": "Codice di avviamento postale registrato in iPA per la sede legale dell'Ente",
+                    "default": ""
+                },
+                "indirizzo": {
+                    "$id": "#/properties/data/properties/indirizzo",
+                    "type": "string",
+                    "title": "indirizzo schema",
+                    "description": "Indirizzo postale registrato in iPA per la sede legale dell'Ente",
+                    "default": ""
+                },
+                "titolo_resp": {
+                    "$id": "#/properties/data/properties/titolo_resp",
+                    "type": "string",
+                    "title": "titolo_resp schema",
+                    "description": "Titolo del responsabile dell'Ente",
+                    "default": ""
+                },
+                "nome_resp": {
+                    "$id": "#/properties/data/properties/nome_resp",
+                    "type": "string",
+                    "title": "nome_resp schema",
+                    "description": "Nome del responsabile dell'Ente",
+                    "default": ""
+                },
+                "cogn_resp": {
+                    "$id": "#/properties/data/properties/cogn_resp",
+                    "type": "string",
+                    "title": "cogn_resp schema",
+                    "description": "Cognome del responsabile dell'Ente",
+                    "default": ""
+                },
+                "sito_istituzionale": {
+                    "$id": "#/properties/data/properties/sito_istituzionale",
+                    "type": ["string", "null"],
+                    "title": "sito_istituzionale schema",
+                    "description": "Sito istituzionale dell'Ente",
+                    "default": null
+                },
+                "liv_access": {
+                    "$id": "#/properties/data/properties/liv_access",
+                    "type": ["string", "null"],
+                    "title": "liv_access schema",
+                    "description": "Livello di accessibilità del sito istituzionale dell'Ente",
+                    "default": null
+                },
+                "mail1": {
+                    "$id": "#/properties/data/properties/mail1",
+                    "type": "string",
+                    "title": "mail1 schema",
+                    "description": "Indirizzo email associato all'Ente di tipo PEC",
+                    "default": ""
+                },
+                "mail2": {
+                    "$id": "#/properties/data/properties/mail2",
+                    "type": "string",
+                    "title": "mail2 schema",
+                    "description": "Indirizzo email associato all'Ente di tipo PEC|ALTRO",
+                    "default": ""
+                },
+                "mail3": {
+                    "$id": "#/properties/data/properties/mail3",
+                    "type": "string",
+                    "title": "mail3 schema",
+                    "description": "Indirizzo email associato all'Ente di tipo PEC|ALTRO",
+                    "default": ""
+                },
+                "mail4": {
+                    "$id": "#/properties/data/properties/mail4",
+                    "type": "string",
+                    "title": "mail4 schema",
+                    "description": "Indirizzo email associato all'Ente di tipo PEC|ALTRO",
+                    "default": ""
+                },
+                "mail5": {
+                    "$id": "#/properties/data/properties/mail5",
+                    "type": "string",
+                    "title": "mail5 schema",
+                    "description": "Indirizzo email associato all'Ente di tipo PEC|ALTRO",
+                    "default": ""
+                },
+                "tipologia": {
+                    "$id": "#/properties/data/properties/tipologia",
+                    "type": "string",
+                    "title": "tipologia schema",
+                    "description": "Tipologia dell'Ente",
+                    "default": ""
+                },
+                "categoria": {
+                    "$id": "#/properties/data/properties/categoria",
+                    "type": "string",
+                    "title": "categoria schema",
+                    "description": "Categoria dell'Ente",
+                    "default": ""
+                },
+                "data_accreditamento": {
+                    "$id": "#/properties/data/properties/data_accreditamento",
+                    "type": "string",
+                    "title": "data_accreditamento schema",
+                    "description": "Data di accreditamento dell'Ente",
+                    "default": ""
+                },
+                "cf": {
+                    "$id": "#/properties/data/properties/cf",
+                    "type": "string",
+                    "title": "cf schema",
+                    "description": "Codice fiscale associato all'Ente in iPA, valorizzato con un codice fiscale di persona giuridica o un codice fiscale di persona fisica",
+                    "default": ""
+                }
+            },
+            "additionalProperties": true
+        }
     },
-    "required": [
-        "result"
-    ]
+    "additionalProperties": true
 }

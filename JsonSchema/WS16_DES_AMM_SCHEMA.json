@@ -1,55 +1,97 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "name": "WS16Response",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://indicepa.gov.it/ipa-files/documenti/WS16_DES_AMM_SCHEMA.json",
     "type": "object",
+    "title": "WS16_DES_AMM",
+    "description": "Schema della response del WS16_DES_AMM",
+    "default": {},
+    "required": [
+        "result",
+        "data"
+    ],
     "properties": {
         "result": {
+            "$id": "#/properties/result",
             "type": "object",
-            "properties": {
-                "cod_err": {
-                    "type": "number",
-                    "description": "Codice di ritorno"
-                },
-                "desc_err": {
-                    "type": "string",
-                    "description": "Descrizione errore"
-                },
-                "num_items": {
-                    "type": "number",
-                    "description": "Numero di occorrenze trovate",
-                    "minimum": 0
-                }
-            },
+            "title": "result schema",
+            "description": "Racchiude parametri intrinsechi alla response",
+            "default": {},
             "required": [
                 "cod_err",
+                "desc_err",
                 "num_items"
-            ]
+            ],
+            "properties": {
+                "cod_err": {
+                    "$id": "#/properties/result/properties/cod_err",
+                    "type": "integer",
+                    "title": "cod_err schema",
+                    "description": "Codice d'errore (consultare la tabella dell'indice dei servizi)",
+                    "default": 0
+                },
+                "desc_err": {
+                    "$id": "#/properties/result/properties/desc_err",
+                    "type": "string",
+                    "title": "desc_err schema",
+                    "description": "Descrizione dell'errore corrispondente al codice d'errore",
+                    "default": ""
+                },
+                "num_items": {
+                    "$id": "#/properties/result/properties/num_items",
+                    "type": "integer",
+                    "title": "num_items schema",
+                    "description": "Numero degli elementi presenti in data",
+                    "default": 0
+                }
+            },
+            "additionalProperties": true
         },
         "data": {
-            "type": ["array", "null"],
+            "$id": "#/properties/data",
+            "type": "array",
+            "title": "data schema",
+            "description": "Contenuto informativo della response",
+            "default": [],            
+            "additionalItems": true,
             "items": {
-                "type": "object",
-                "properties": {
-                    "cod_amm": {
-                        "type": "string",
-                        "description": "Codice Ente accreditato in IPA"
-                    },
-                    "acronimo": {
-                        "type": "string",
-                        "description": "Acronimo dell'Ente"
-                    },
-                    "des_amm": {
-                        "type": "string",
-                        "description": "Denominazione Ente accreditato in IPA"
+                "$id": "#/properties/data/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/data/items/anyOf/0",
+                        "type": "object",
+                        "default": {},
+                        "required": [
+                            "cod_amm",
+                            "des_amm"
+                        ],
+                        "properties": {
+                            "cod_amm": {
+                                "$id": "#/properties/data/items/anyOf/0/properties/cod_amm",
+                                "type": "string",
+                                "title": "cod_amm schema",
+                                "description": "Codice dell'Ente come è accreditato sull'iPA",
+                                "default": ""
+                            },
+                            "acronimo": {
+                                "$id": "#/properties/data/items/anyOf/0/properties/acronimo",
+                                "type": ["string", "null"],
+                                "title": "acronimo schema",
+                                "description": "Acronimo dell'Ente",
+                                "default": null
+                            },
+                            "des_amm": {
+                                "$id": "#/properties/data/items/anyOf/0/properties/des_amm",
+                                "type": "string",
+                                "title": "des_amm schema",
+                                "description": "Descrizione dell'ente",
+                                "default": ""
+                            }
+                        },
+                        "additionalProperties": true
                     }
-                },
-                "required": [
-                    "cod_amm"
                 ]
             }
         }
     },
-    "required": [
-        "result"
-    ]
+    "additionalProperties": true
 }

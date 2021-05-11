@@ -1,116 +1,202 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "name": "WS03Response",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://indicepa.gov.it/ipa-files/documenti/WS03_OU_SCHEMA.json",
     "type": "object",
+    "title": "WS03_OU",
+    "description": "Schema della response del WS03_OU",
+    "default": {},
+    "required": [
+        "result",
+        "data"
+    ],
     "properties": {
         "result": {
+            "$id": "#/properties/result",
             "type": "object",
-            "properties": {
-                "cod_err": {
-                    "type": "number",
-                    "description": "Codice di ritorno"
-                },
-                "desc_err": {
-                    "type": "string",
-                    "description": "Descrizione errore"
-                },
-                "num_items": {
-                    "type": "number",
-                    "description": "Numero di occorrenze trovate",
-                    "minimum": 0
-                }
-            },
+            "title": "result schema",
+            "description": "Racchiude parametri intrinsechi alla response",
+            "default": {},
             "required": [
                 "cod_err",
+                "desc_err",
                 "num_items"
-            ]
+            ],
+            "properties": {
+                "cod_err": {
+                    "$id": "#/properties/result/properties/cod_err",
+                    "type": "integer",
+                    "title": "cod_err schema",
+                    "description": "Codice d'errore (consultare la tabella dell'indice dei servizi)",
+                    "default": 0
+                },
+                "desc_err": {
+                    "$id": "#/properties/result/properties/desc_err",
+                    "type": "string",
+                    "title": "desc_err schema",
+                    "description": "Descrizione dell'errore corrispondente al codice d'errore",
+                    "default": ""
+                },
+                "num_items": {
+                    "$id": "#/properties/result/properties/num_items",
+                    "type": "integer",
+                    "title": "num_items schema",
+                    "description": "Numero degli elementi presenti in data",
+                    "default": 0
+                }
+            },
+            "additionalProperties": true
         },
         "data": {
-            "type": ["array", "null"],
+            "$id": "#/properties/data",
+            "type": "array",
+            "title": "data schema",
+            "description": "Contenuto informativo della response",
+            "default": [],
+            "additionalItems": true,
             "items": {
-                "type": "object",
-                "properties": {
-                    "cod_amm": {
-                        "type": "string",
-                        "description": "Codice Ente accreditato in IPA"
+                "$id": "#/properties/data/items",
+                "anyOf": [{
+                    "$id": "#/properties/data/items/anyOf/0",
+                    "type": "object",
+                    "default": {},
+                    "required": [
+                        "cod_amm",
+                        "cod_uni_ou",
+                        "des_ou",
+                        "mail1"
+                    ],
+                    "properties": {
+                        "cod_amm": {
+                            "$id": "#/properties/data/items/anyOf/0/properties/cod_amm",
+                            "type": "string",
+                            "title": "cod_amm schema",
+                            "description": "Codice dell'Ente come è accreditato sull'iPA",
+                            "default": ""
+                        },
+                        "cod_uni_ou": {
+                            "$id": "#/properties/data/items/anyOf/0/properties/cod_uni_ou",
+                            "type": "string",
+                            "title": "cod_uni_ou schema",
+                            "description": "Codice Univoco dell'Unità Organizzativa",
+                            "default": ""
+                        },
+                        "cod_aoo": {
+                            "$id": "#/properties/data/items/anyOf/0/properties/cod_aoo",
+                            "type": ["string", "null"],
+                            "title": "cod_aoo schema",
+                            "description": "Codice dell'Area organizzativa Omogenea",
+                            "default": null
+                        },
+                        "des_ou": {
+                            "$id": "#/properties/data/items/anyOf/0/properties/des_ou",
+                            "type": "string",
+                            "title": "des_ou schema",
+                            "description": "Denominazione dell'Ufficio destinatario della Fatturazione Elettronica",
+                            "default": ""
+                        },
+                        "regione": {
+                            "$id": "#/properties/data/items/anyOf/0/properties/regione",
+                            "type": ["string", "null"],
+                            "title": "regione schema",
+                            "description": "Regione registrata in iPA per la sede dell'Unità Organizzativa",
+                            "default": null
+                        },
+                        "provincia": {
+                            "$id": "#/properties/data/items/anyOf/0/properties/provincia",
+                            "type": ["string", "null"],
+                            "title": "provincia schema",
+                            "description": "Provincia registrata in iPA per la sede dell'Unità Organizzativa",
+                            "default": null
+                        },
+                        "comune": {
+                            "$id": "#/properties/data/items/anyOf/0/properties/comune",
+                            "type": ["string", "null"],
+                            "title": "comune schema",
+                            "description": "Comune registrato in iPA per la sede dell'Unità Organizzativa",
+                            "default": null
+                        },
+                        "cap": {
+                            "$id": "#/properties/data/items/anyOf/0/properties/cap",
+                            "type": ["string", "null"],
+                            "title": "cap schema",
+                            "description": "Codice di avviamento postale registrato in iPA per la sede dell'Unità Organizzativa",
+                            "default": null
+                        },
+                        "indirizzo": {
+                            "$id": "#/properties/data/items/anyOf/0/properties/indirizzo",
+                            "type": ["string", "null"],
+                            "title": "indirizzo schema",
+                            "description": "Indirizzo postale registrato in iPA per la sede dell'Unità Organizzativa",
+                            "default": null
+                        },
+                        "tel": {
+                            "$id": "#/properties/data/items/anyOf/0/properties/tel",
+                            "type": ["string", "null"],
+                            "title": "tel schema",
+                            "description": "Numero di telefono registrato in iPA per l'Unità Organizzativa",
+                            "default": null
+                        },
+                        "fax": {
+                            "$id": "#/properties/data/items/anyOf/0/properties/fax",
+                            "type": ["string", "null"],
+                            "title": "fax schema",
+                            "description": "Numero di fax registrato in iPA per l'Unità Organizzativa",
+                            "default": null
+                        },
+                        "mail1": {
+                            "$id": "#/properties/data/items/anyOf/0/properties/mail1",
+                            "type": "string",
+                            "title": "mail1 schema",
+                            "description": "Indirizzo email associato all'Unità Organizzativa di tipo PEC|CECPAC|ALTRO",
+                            "default": ""
+                        },
+                        "mail2": {
+                            "$id": "#/properties/data/items/anyOf/0/properties/mail2",
+                            "type": "string",
+                            "title": "mail2 schema",
+                            "description": "Indirizzo email associato all'Unità Organizzativa di tipo PEC|CECPAC|ALTRO",
+                            "default": ""
+                        },
+                        "mail3": {
+                            "$id": "#/properties/data/items/anyOf/0/properties/mail3",
+                            "type": "string",
+                            "title": "mail3 schema",
+                            "description": "Indirizzo email associato all'Unità Organizzativa di tipo PEC|CECPAC|ALTRO",
+                            "default": ""
+                        },
+                        "nome_resp": {
+                            "$id": "#/properties/data/items/anyOf/0/properties/nome_resp",
+                            "type": ["string", "null"],
+                            "title": "nome_resp schema",
+                            "description": "Nome del responsabile dell'Unità Organizzativa",
+                            "default": null
+                        },
+                        "cogn_resp": {
+                            "$id": "#/properties/data/items/anyOf/0/properties/cogn_resp",
+                            "type": ["string", "null"],
+                            "title": "cogn_resp schema",
+                            "description": "Cognome del responsabile dell'Unità Organizzativa",
+                            "default": null
+                        },
+                        "mail_resp": {
+                            "$id": "#/properties/data/items/anyOf/0/properties/mail_resp",
+                            "type": ["string", "null"],
+                            "title": "mail_resp schema",
+                            "description": "Indirizzo email del responsabile dell'Unità Organizzativa",
+                            "default": null
+                        },
+                        "tel_resp": {
+                            "$id": "#/properties/data/items/anyOf/0/properties/tel_resp",
+                            "type": ["string", "null"],
+                            "title": "tel_resp schema",
+                            "description": "Numero di telefono del responsabile dell'Unità Organizzativa",
+                            "default": null
+                        }
                     },
-                    "cod_uni_ou": {
-                        "type": "string",
-                        "description": "Codice Univoco dell'UO"
-                    },
-                    "cod_aoo": {
-                        "type": ["string", "null"],
-                        "description": "Codice AOO"
-                    },
-                    "des_ou": {
-                        "type": "string",
-                        "description": "Nome dell'UO"
-                    },
-                    "regione": {
-                        "type": "string",
-                        "description": "Regione registrata in IPA per la sede dell'UO"
-                    },
-                    "provincia": {
-                        "type": "string",
-                        "description": "Provincia registrata in IPA per la sede dell'UO"
-                    },
-                    "comune": {
-                        "type": "string",
-                        "description": "ComuneregistratoinIPAperlasededell'UO"
-                    },
-                    "cap": {
-                        "type": "string",
-                        "description": "CapregistratoinIPAperlasededell'UO"
-                    },
-                    "indirizzo": {
-                        "type": "string",
-                        "description": "IndirizzopostaleregistratoinIPAperlasededell'UO"
-                    },
-                    "tel": {
-                        "type": "string",
-                        "description": "NumeroditelefonoregistratoinIPAperdell'UO"
-                    },
-                    "fax": {
-                        "type": "string",
-                        "description": "NumerodifaxregistratoinIPAperdell'UO"
-                    },
-                    "mail1": {
-                        "type": "string",
-                        "description": "Indirizzoemailprimarioassociatoall'UO"
-                    },
-                    "mail2": {
-                        "type": "string",
-                        "description": "Indirizzoemailassociatoall'UO"
-                    },
-                    "mail3": {
-                        "type": "string",
-                        "description": "Indirizzoemailassociatoall'UO"
-                    },
-                    "nome_resp": {
-                        "type": "string",
-                        "description": "Nomedelresponsabiledell'UO"
-                    },
-                    "cogn_resp": {
-                        "type": "string",
-                        "description": "Cognomedelresponsabiledell'UO"
-                    },
-                    "mail_resp": {
-                        "type": ["string", "null"],
-                        "description": "Indirizzoemaildelresponsabiledell'UO"
-                    },
-                    "tel_resp": {
-                        "type": "string",
-                        "description": "Numeroditelefonodelresponsabiledell'UO"
-                    }
-                },
-                "required": [
-                    "cod_amm",
-                    "cod_uni_ou"
-                ]
+                    "additionalProperties": true
+                }]
             }
         }
     },
-    "required": [
-        "result"
-    ]
+    "additionalProperties": true
 }

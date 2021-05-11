@@ -8,7 +8,7 @@
     /// </summary>
     public partial class Ws16 : WsJson
     {
-        [JsonProperty("data")]
+        [JsonProperty("data", Required = Required.AllowNull)]
         public List<DataWs16> Data { get; set; }
 
         [JsonProperty("result", Required = Required.Always)]
@@ -20,7 +20,7 @@
         /// <summary>
         /// Acronimo dell'Ente
         /// </summary>
-        [JsonProperty("acronimo", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("acronimo", Required = Required.AllowNull)]
         public string Acronimo { get; set; }
 
         /// <summary>
@@ -32,7 +32,7 @@
         /// <summary>
         /// Denominazione Ente accreditato in IPA
         /// </summary>
-        [JsonProperty("des_amm", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("des_amm", Required = Required.Always)]
         public string DesAmm { get; set; }
     }
 }

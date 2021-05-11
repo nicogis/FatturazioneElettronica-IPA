@@ -87,7 +87,7 @@ namespace FatturazioneElettronica.IPA
 
                 if (string.IsNullOrWhiteSpace(json))
                 {
-                    throw new Exception("Il ws ha restituito una risposta vuota: probabilmente i parametri passati hanno caratteri non consentiti o altri problemi");
+                    throw new Exception("Il ws ha restituito una risposta vuota: probabilmente i parametri passati hanno caratteri non consentiti o altri problemi (es. apici da raddoppiare ecc.)");
                 }
 
                 
@@ -106,7 +106,7 @@ namespace FatturazioneElettronica.IPA
                     {
                         var e = string.Join(Environment.NewLine, errors);
 
-                        throw new Exception($"Json non valido con lo schema indicato:{Environment.NewLine}{e}");
+                        throw new Exception($"Json non valido con lo schema indicato da IPA:{Environment.NewLine}{e}");
                     }
                 }
 

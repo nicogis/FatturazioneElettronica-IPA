@@ -14,7 +14,7 @@ namespace FatturazioneElettronica.IPA
     /// </summary>
     public partial class Ws01 : WsJson
     {
-        [JsonProperty("data")]
+        [JsonProperty("data", Required = Required.AllowNull)]
         public List<DataWs01> Data { get; set; }
 
         [JsonProperty("result", Required = Required.Always)]

@@ -9,7 +9,7 @@
     /// </summary>
     public partial class Ws09 : WsJson
     {
-        [JsonProperty("data")]
+        [JsonProperty("data", Required = Required.AllowNull)]
         public List<DataWs09> Data { get; set; }
 
         [JsonProperty("result", Required = Required.Always)]
@@ -21,7 +21,7 @@
         /// <summary>
         /// Cap registrato in IPA per la sede dell'AOO
         /// </summary>
-        [JsonProperty("cap", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("cap", Required = Required.AllowNull)]
         public string Cap { get; set; }
 
         /// <summary>
@@ -39,7 +39,7 @@
         /// <summary>
         /// Comune registrato in IPA per la sede dell'AOO
         /// </summary>
-        [JsonProperty("comune", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("comune", Required = Required.AllowNull)]
         public string Comune { get; set; }
 
         /// <summary>
@@ -57,7 +57,7 @@
         /// <summary>
         /// Nome dell'AOO
         /// </summary>
-        [JsonProperty("des_aoo", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("des_aoo", Required = Required.Always)]
         public string DesAoo { get; set; }
 
         /// <summary>
@@ -69,31 +69,31 @@
         /// <summary>
         /// Numero di fax registrato in IPA per l'AOO
         /// </summary>
-        [JsonProperty("fax", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("fax", Required = Required.AllowNull)]
         public string Fax { get; set; }
 
         /// <summary>
         /// Indirizzo postale registrato in IPA per la sede dell'AOO
         /// </summary>
-        [JsonProperty("indirizzo", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("indirizzo", Required = Required.AllowNull)]
         public string Indirizzo { get; set; }
 
         /// <summary>
         /// Provincia registrata in IPA per la sede dell'AOO
         /// </summary>
-        [JsonProperty("provincia", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("provincia", Required = Required.AllowNull)]
         public string Provincia { get; set; }
 
         /// <summary>
         /// Regione registrata in IPA per la sede dell'AOO
         /// </summary>
-        [JsonProperty("regione", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("regione", Required = Required.AllowNull)]
         public string Regione { get; set; }
 
         /// <summary>
         /// Numero di telefono registrato in IPA per l'AOO
         /// </summary>
-        [JsonProperty("tel", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("tel", Required = Required.AllowNull)]
         public string Tel { get; set; }
 
         /// <summary>

@@ -13,7 +13,7 @@ namespace FatturazioneElettronica.IPA
     /// </summary>
     public partial class Ws06 : WsJson
     {
-        [JsonProperty("data")]
+        [JsonProperty("data", Required = Required.AllowNull)]
         public DataWs06 Data { get; set; }
 
         [JsonProperty("result", Required = Required.Always)]
@@ -37,7 +37,7 @@ namespace FatturazioneElettronica.IPA
         /// <summary>
         /// Codice fiscale del nodo di smistamento ordini
         /// </summary>
-        [JsonProperty("cf_nso", Required = Required.Always)]
+        [JsonProperty("cf_nso", Required = Required.AllowNull)]
         public string CfNso { get; set; }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace FatturazioneElettronica.IPA
         /// <summary>
         /// Data di inizio validità del nodo di smistamento ordini
         /// </summary>
-        [JsonProperty("dat_val_canale_trasm_nso", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("dat_val_canale_trasm_nso", Required = Required.AllowNull)]
         public string DatValCanaleTrasmNso { get; set; }
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace FatturazioneElettronica.IPA
         /// <summary>
         /// Nome dell'UO
         /// </summary>
-        [JsonProperty("des_ou", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("des_ou", Required = Required.Always)]
         public string DesOu { get; set; }
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace FatturazioneElettronica.IPA
         /// <summary>
         /// Data di validazione del cf del nodo di smistamento ordini
         /// </summary>
-        [JsonProperty("dt_verifica_cf_nso", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("dt_verifica_cf_nso", Required = Required.AllowNull)]
         public string DtVerificaCfNso { get; set; }
 
         /// <summary>

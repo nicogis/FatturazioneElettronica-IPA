@@ -14,7 +14,7 @@ namespace FatturazioneElettronica.IPA
     /// </summary>
     public partial class Ws04 : WsJson
     {
-        [JsonProperty("data")]
+        [JsonProperty("data", Required = Required.AllowNull)]
         public List<DataWs04> Data { get; set; }
 
         [JsonProperty("result", Required = Required.Always)]
@@ -44,31 +44,31 @@ namespace FatturazioneElettronica.IPA
         /// <summary>
         /// Codice Univoco dell'Ufficio di fatturazione elettronica
         /// </summary>
-        [JsonProperty("cod_uni_ou", Required = Required.Always)]
+        [JsonProperty("cod_uni_ou", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
         public string CodUniOu { get; set; }
 
         /// <summary>
         /// Data di inizio validità del servizio di fatturazione
         /// </summary>
-        [JsonProperty("dat_val_canale_trasm_sfe", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("dat_val_canale_trasm_sfe", Required = Required.Always)]
         public string DatValCanaleTrasmSfe { get; set; }
 
         /// <summary>
         /// Nome dell'UO
         /// </summary>
-        [JsonProperty("des_ou", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("des_ou", Required = Required.Always)]
         public string DesOu { get; set; }
 
         /// <summary>
         /// Data di validazione del cf
         /// </summary>
-        [JsonProperty("dt_verifica_cf", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("dt_verifica_cf", Required = Required.Always)]
         public string DtVerificaCf { get; set; }
 
         /// <summary>
         /// Stato del canale di fatturazione
         /// </summary>
-        [JsonProperty("stato_canale", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("stato_canale", Required = Required.Always)]
         public string StatoCanale { get; set; }
     }
 }
