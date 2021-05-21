@@ -86,7 +86,7 @@ Occorre selezionare la voce del menu Richiedi Authorization ID e compilare la fo
 
 ### Installazione
 ```
-	PM> Install-Package StudioAT.FatturazioneElettronica.IPA -Version 1.7.1
+	PM> Install-Package StudioAT.FatturazioneElettronica.IPA -Version 1.7.2
 ```
 dalla Console di Gestione Pacchetti di Visual Studio
 
