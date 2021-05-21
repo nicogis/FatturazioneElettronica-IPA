@@ -48,7 +48,7 @@
         },
         "data": {
             "$id": "#/properties/data",
-            "type": "object",
+            "type": ["object", "null"],
             "title": "data schema",
             "description": "Contenuto informativo della response",
             "default": {},
