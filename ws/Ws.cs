@@ -53,7 +53,7 @@ namespace FatturazioneElettronica.IPA
             return !result;
         }
 
-        protected async Task<string> SendRequest(FormUrlEncodedContent requestParameters)
+        protected async Task<string> SendRequestAsync(FormUrlEncodedContent requestParameters)
         {
             this.Endpoint = $"{this.GetType().Name.ToUpperInvariant().Replace("_", string.Empty)}Services/api/{this.GetType().Name.ToUpperInvariant()}";
 
@@ -83,32 +83,14 @@ namespace FatturazioneElettronica.IPA
             {
                 FormUrlEncodedContent requestParameters = new FormUrlEncodedContent(this.parameters);
 
-                string json = this.SendRequest(requestParameters).Result;
+                string json = this.SendRequestAsync(requestParameters).Result;
 
                 if (string.IsNullOrWhiteSpace(json))
                 {
                     throw new Exception("Il ws ha restituito una risposta vuota: probabilmente i parametri passati hanno caratteri non consentiti o altri problemi (es. apici da raddoppiare ecc.)");
                 }
-
                 
-                if (Ws<T>.ValidateSchema)
-                {
-                    JObject ws = JObject.Parse(json);
-                    string result = null;
-                    using (StreamReader reader = new StreamReader(Assembly.GetExecutingAssembly().GetManifestResourceStream($"{this.GetType().Namespace}.JsonSchema.{this.GetType().Name.ToUpperInvariant()}_SCHEMA.{Enum.GetName(typeof(EstensioniFile), EstensioniFile.json)}")))
-                    {
-                        result = reader.ReadToEnd();
-                    }
-
-                    JSchema schema = JSchema.Parse(result);
-
-                    if (!ws.IsValid(schema, out IList<string> errors))
-                    {
-                        var e = string.Join(Environment.NewLine, errors);
-
-                        throw new Exception($"Json non valido con lo schema indicato da IPA:{Environment.NewLine}{e}");
-                    }
-                }
+                ValidateJsonSchema(json);
 
                 return Ws<T>.FromJson(json);
                 
@@ -116,6 +98,51 @@ namespace FatturazioneElettronica.IPA
             catch
             {
                 throw;
+            }
+        }
+
+        protected async System.Threading.Tasks.Task<T> RequestAsync()
+        {
+            try
+            {
+                FormUrlEncodedContent requestParameters = new FormUrlEncodedContent(this.parameters);
+
+                string json = await this.SendRequestAsync(requestParameters);
+
+                if (string.IsNullOrWhiteSpace(json))
+                {
+                    throw new Exception("Il ws ha restituito una risposta vuota: probabilmente i parametri passati hanno caratteri non consentiti o altri problemi (es. apici da raddoppiare ecc.)");
+                }
+
+                ValidateJsonSchema(json);
+
+                return Ws<T>.FromJson(json);
+
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        protected virtual void ValidateJsonSchema(string json)
+        {
+            if (!Ws<T>.ValidateSchema) 
+                return;
+            JObject ws = JObject.Parse(json);
+            string result = null;
+            using (StreamReader reader = new StreamReader(Assembly.GetExecutingAssembly().GetManifestResourceStream($"{this.GetType().Namespace}.JsonSchema.{this.GetType().Name.ToUpperInvariant()}_SCHEMA.{Enum.GetName(typeof(EstensioniFile), EstensioniFile.json)}")))
+            {
+                result = reader.ReadToEnd();
+            }
+
+            JSchema schema = JSchema.Parse(result);
+
+            if (!ws.IsValid(schema, out IList<string> errors))
+            {
+                var e = string.Join(Environment.NewLine, errors);
+
+                throw new Exception($"Json non valido con lo schema indicato da IPA:{Environment.NewLine}{e}");
             }
         }
     }

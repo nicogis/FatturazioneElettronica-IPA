@@ -26,6 +26,13 @@ namespace FatturazioneElettronica.IPA
             return base.Request();
         }
 
+        public new System.Threading.Tasks.Task<Ws10> RequestAsync()
+        {
+            this.AddParameters(new KeyValuePair<string, string>("COD_UNI_OU", this.CodUniOU));
+
+            return base.RequestAsync();
+        }
+
         public string CodUniOU
         {
             get;

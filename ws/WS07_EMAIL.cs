@@ -27,6 +27,13 @@ namespace FatturazioneElettronica.IPA
             return base.Request();
         }
 
+        public new System.Threading.Tasks.Task<Ws07> RequestAsync()
+        {
+            this.AddParameters(new KeyValuePair<string, string>("EMAIL", this.Email));
+
+            return base.RequestAsync();
+        }
+
         public string Email
         {
             get;
