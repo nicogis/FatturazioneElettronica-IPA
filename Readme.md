@@ -19,7 +19,7 @@ Occorre selezionare la voce del menu Richiedi Authorization ID e compilare la fo
 		// Ws01_SFE_CF.ValidateSchema = true; (default è false)
 		Ws01_SFE_CF a = new Ws01_SFE_CF("81034410609", myAuthId);
 		Ws01 aa = a.Request();
-       Task<Ws01> aas = a.RequestAsync();
+		Task<Ws01> aas = a.RequestAsync();
 
 		Ws02_AOO b = new Ws02_AOO("192", myAuthId);
 		Ws02 bb = b.Request();
