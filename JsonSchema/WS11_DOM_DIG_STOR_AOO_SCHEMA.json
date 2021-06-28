@@ -6,8 +6,7 @@
     "description": "Schema della response del WS11_DOM_DIG_STOR_AOO",
     "default": {},
     "required": [
-        "result",
-        "data"
+        "result"
     ],
     "properties": {
         "result": {
@@ -182,5 +181,11 @@
             }
         }
     },
+    "if": {
+        "properties": { "result": { "properties": {"num_items" : {"minimum": 1}} } }
+      },
+      "then": {
+        "required": ["data"]
+      },
     "additionalProperties": true
 }

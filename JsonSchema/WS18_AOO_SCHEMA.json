@@ -6,8 +6,7 @@
     "description": "Schema della response del WS18_AOO",
     "default": {},
     "required": [
-        "result",
-        "data"
+        "result"
     ],
     "properties": {
         "result": {
@@ -190,5 +189,11 @@
             "additionalProperties": true
         }
     },
+    "if": {
+        "properties": { "result": { "properties": {"num_items" : {"minimum": 1}} } }
+      },
+      "then": {
+        "required": ["data"]
+      },
     "additionalProperties": true
 }

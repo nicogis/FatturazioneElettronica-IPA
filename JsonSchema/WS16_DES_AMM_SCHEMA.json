@@ -6,8 +6,7 @@
     "description": "Schema della response del WS16_DES_AMM",
     "default": {},
     "required": [
-        "result",
-        "data"
+        "result"
     ],
     "properties": {
         "result": {
@@ -93,5 +92,11 @@
             }
         }
     },
+    "if": {
+        "properties": { "result": { "properties": {"num_items" : {"minimum": 1}} } }
+      },
+      "then": {
+        "required": ["data"]
+      },
     "additionalProperties": true
 }

@@ -6,8 +6,7 @@
     "description": "Schema della response del WS13_DOM_DIG",
     "default": {},
     "required": [
-        "result",
-        "data"
+        "result"
     ],
     "properties": {
         "result": {
@@ -133,5 +132,11 @@
             }
         }
     },
+    "if": {
+        "properties": { "result": { "properties": {"num_items" : {"minimum": 1}} } }
+      },
+      "then": {
+        "required": ["data"]
+      },
     "additionalProperties": true
 }

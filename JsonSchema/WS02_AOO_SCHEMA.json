@@ -6,8 +6,7 @@
     "description": "Schema della response del WS02_AOO",
     "default": {},
     "required": [
-        "result",
-        "data"
+        "result"
     ],
     "properties": {
         "result": {
@@ -191,5 +190,11 @@
             }
         }
     },
+    "if": {
+        "properties": { "result": { "properties": {"num_items" : {"minimum": 1}} } }
+      },
+      "then": {
+        "required": ["data"]
+      },
     "additionalProperties": true
 }

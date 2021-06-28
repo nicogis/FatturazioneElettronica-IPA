@@ -87,7 +87,7 @@ namespace FatturazioneElettronica.IPA
 
                 if (string.IsNullOrWhiteSpace(json))
                 {
-                    throw new Exception("Il ws ha restituito una risposta vuota: probabilmente i parametri passati hanno caratteri non consentiti o altri problemi (es. apici da raddoppiare ecc.)");
+                    throw new Exception("Il ws ha restituito una risposta vuota: probabilmente i parametri passati hanno caratteri non consentiti o altri problemi (es. apici da raddoppiare, parametro non formalmente corretto ecc.)");
                 }
 
                 
