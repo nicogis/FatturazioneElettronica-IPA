@@ -25,6 +25,13 @@ namespace FatturazioneElettronica.IPA
             return base.Request();
         }
 
+        public new System.Threading.Tasks.Task<Ws13> RequestAsync()
+        {
+            this.AddParameters(new KeyValuePair<string, string>("DOM_DIG", this.DomDig));
+
+            return base.RequestAsync();
+        }
+
         public string DomDig
         {
             get;

@@ -28,6 +28,14 @@ namespace FatturazioneElettronica.IPA
             return base.Request();
         }
 
+        public new System.Threading.Tasks.Task<Ws16> RequestAsync()
+        {
+            this.AddParameters(new KeyValuePair<string, string>("DESCR", this.Descr));
+
+
+            return base.RequestAsync();
+        }
+
         public string Descr
         {
             get;

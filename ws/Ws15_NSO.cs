@@ -28,6 +28,14 @@ namespace FatturazioneElettronica.IPA
             return base.Request();
         }
 
+        public new System.Threading.Tasks.Task<Ws15> RequestAsync()
+        {
+            this.AddParameters(new KeyValuePair<string, string>("COD_AMM", this.CodAmm));
+
+
+            return base.RequestAsync();
+        }
+
         public string CodAmm
         {
             get;

@@ -33,6 +33,14 @@ namespace FatturazioneElettronica.IPA
             return base.Request();
         }
 
+        public new System.Threading.Tasks.Task<Ws11> RequestAsync()
+        {
+            this.AddParameters(new KeyValuePair<string, string>("COD_AMM", this.CodAmm));
+            this.AddParameters(new KeyValuePair<string, string>("COD_AOO", this.CodAOO));
+
+            return base.RequestAsync();
+        }
+
         public string CodAmm
         {
             get;
