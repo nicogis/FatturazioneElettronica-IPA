@@ -7,6 +7,7 @@
 namespace FatturazioneElettronica.IPA
 {
     using System.Collections.Generic;
+    using System.Threading.Tasks;
 
     /// <summary>
     /// Questo servizio web consente di estrarre dall' iPA informazioni relative ad una specifica Unità Organizzativa di un Ente accreditato in iPA. 
@@ -25,7 +26,7 @@ namespace FatturazioneElettronica.IPA
             return base.Request();
         }
 
-        public new System.Threading.Tasks.Task<Ws06> RequestAsync()
+        public new Task<Ws06> RequestAsync()
         {
             this.AddParameters(new KeyValuePair<string, string>("COD_UNI_OU", this.CodUniOU));
 

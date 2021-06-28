@@ -7,6 +7,7 @@
 namespace FatturazioneElettronica.IPA
 {
     using System.Collections.Generic;
+    using System.Threading.Tasks;
 
     /// <summary>
     /// Questo servizio web consente di estrarre dall'iPA informazioni relativa ad una entità, sia essa un Ente, un'Unità Organizzativa, un'Area Organizzativa Omogenea, 
@@ -27,7 +28,7 @@ namespace FatturazioneElettronica.IPA
             return base.Request();
         }
 
-        public new System.Threading.Tasks.Task<Ws07> RequestAsync()
+        public new Task<Ws07> RequestAsync()
         {
             this.AddParameters(new KeyValuePair<string, string>("EMAIL", this.Email));
 

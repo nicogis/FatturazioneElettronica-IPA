@@ -7,6 +7,7 @@
 namespace FatturazioneElettronica.IPA
 {
     using System.Collections.Generic;
+    using System.Threading.Tasks;
 
     /// <summary>
     /// Questo servizio web consente di estrarre dall' iPA la lista delle Unità Organizzative facenti capo ad uno specifico codice iPA. 
@@ -25,7 +26,7 @@ namespace FatturazioneElettronica.IPA
             return base.Request();
         }
 
-        public new System.Threading.Tasks.Task<Ws03> RequestAsync()
+        public new Task<Ws03> RequestAsync()
         {
             this.AddParameters(new KeyValuePair<string, string>("COD_AMM", this.CodAmm));
 

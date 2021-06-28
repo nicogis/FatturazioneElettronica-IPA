@@ -7,6 +7,7 @@
 namespace FatturazioneElettronica.IPA
 {
     using System.Collections.Generic;
+    using System.Threading.Tasks;
 
 
     /// <summary>
@@ -28,7 +29,7 @@ namespace FatturazioneElettronica.IPA
             return base.Request();
         }
 
-        public new System.Threading.Tasks.Task<Ws15> RequestAsync()
+        public new Task<Ws15> RequestAsync()
         {
             this.AddParameters(new KeyValuePair<string, string>("COD_AMM", this.CodAmm));
 

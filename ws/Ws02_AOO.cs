@@ -7,6 +7,7 @@
 namespace FatturazioneElettronica.IPA
 {
     using System.Collections.Generic;
+    using System.Threading.Tasks;
 
     /// <summary>
     /// Questo servizio web consente di estrarre dall' iPA informazioni su tutte le aree organizzative omogenee associate al codice iPA fornito. 
@@ -35,7 +36,7 @@ namespace FatturazioneElettronica.IPA
             return base.Request();
         }
 
-        public new System.Threading.Tasks.Task<Ws02> RequestAsync()
+        public new Task<Ws02> RequestAsync()
         {
             this.AddParameters(new KeyValuePair<string, string>("COD_AMM", this.CodAmm));
             this.AddParameters(new KeyValuePair<string, string>("COD_AOO", this.CodAOO));

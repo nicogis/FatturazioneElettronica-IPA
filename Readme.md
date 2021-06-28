@@ -6,7 +6,7 @@ Libreria sviluppata in c# per interrogare i web services dell'IPA. Per maggiore 
 Per utilizzare i Web Services è necessario chiedere una specifica autorizzazione. 
 Occorre selezionare la voce del menu Richiedi Authorization ID e compilare la form dedicata al seguente [link](https://indicepa.gov.it/ipa-portale/dati-statistiche/web-service/richiedi-authorization-id)
 
-##### E' stato aggiunta la proprietà ValidateSchema (default = false). Gli schemi pubblicati su sito indicepa.gov.it non validano sempre i dati e contengono ancora errori.
+##### E' stato aggiunta la proprietà ValidateSchema (default = false). Gli schemi pubblicati (sito indicepa.gov.it) non validano sempre i dati e contengono ancora errori. In questa libreria sono stati corretti.
 
 ### Utilizzo
 
@@ -19,6 +19,7 @@ Occorre selezionare la voce del menu Richiedi Authorization ID e compilare la fo
 		// Ws01_SFE_CF.ValidateSchema = true; (default è false)
 		Ws01_SFE_CF a = new Ws01_SFE_CF("81034410609", myAuthId);
 		Ws01 aa = a.Request();
+       Task<Ws01> aas = a.RequestAsync();
 
 		Ws02_AOO b = new Ws02_AOO("192", myAuthId);
 		Ws02 bb = b.Request();
@@ -86,7 +87,7 @@ Occorre selezionare la voce del menu Richiedi Authorization ID e compilare la fo
 
 ### Installazione
 ```
-	PM> Install-Package StudioAT.FatturazioneElettronica.IPA -Version 1.7.2
+	PM> Install-Package StudioAT.FatturazioneElettronica.IPA -Version 1.7.3
 ```
 dalla Console di Gestione Pacchetti di Visual Studio
 

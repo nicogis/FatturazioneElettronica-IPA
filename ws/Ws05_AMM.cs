@@ -7,6 +7,7 @@
 namespace FatturazioneElettronica.IPA
 {
     using System.Collections.Generic;
+    using System.Threading.Tasks;
 
     /// <summary>
     /// Questo servizio web consente di estrarre dall' iPA informazioni relativa ad un Ente specifico. 
@@ -25,7 +26,7 @@ namespace FatturazioneElettronica.IPA
             return base.Request();
         }
 
-        public new System.Threading.Tasks.Task<Ws05> RequestAsync()
+        public new Task<Ws05> RequestAsync()
         {
             this.AddParameters(new KeyValuePair<string, string>("COD_AMM", this.CodAmm));
 

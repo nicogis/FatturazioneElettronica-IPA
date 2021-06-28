@@ -7,6 +7,7 @@
 namespace FatturazioneElettronica.IPA
 {
     using System.Collections.Generic;
+    using System.Threading.Tasks;
 
     /// <summary>
     /// Questo servizio web consente di estrarre dall'iPA informazioni relativa alla lista delle variazioni storiche dei domicili digitali di un Ufficio, 
@@ -26,7 +27,7 @@ namespace FatturazioneElettronica.IPA
             return base.Request();
         }
 
-        public new System.Threading.Tasks.Task<Ws12> RequestAsync()
+        public new Task<Ws12> RequestAsync()
         {
             this.AddParameters(new KeyValuePair<string, string>("COD_UNI_OU", this.CodUniOU));
 

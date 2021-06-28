@@ -5,6 +5,7 @@
 // <author>Nicogis</author>
 //-----------------------------------------------------------------------
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace FatturazioneElettronica.IPA
 {
@@ -28,7 +29,7 @@ namespace FatturazioneElettronica.IPA
             return base.Request();
         }
 
-        public new System.Threading.Tasks.Task<Ws18> RequestAsync()
+        public new Task<Ws18> RequestAsync()
         {
             this.AddParameters(new KeyValuePair<string, string>("COD_UNI_AOO", this.CodUniAOO));
 
