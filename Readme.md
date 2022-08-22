@@ -80,6 +80,9 @@ Occorre selezionare la voce del menu Richiedi Authorization ID e compilare la fo
 
 		Ws18_AOO v3 = new Ws18_AOO("asdfdfsdfsdfsdffd", myAuthId);
 		Ws18 vv3 = v3.Request();
+
+		Ws19_AOO v4 = new Ws19_AOO("054", "A3F7393", myAuthId);
+        Ws19 vv4 = v4.Request();
 	   
 
 ```
@@ -87,7 +90,7 @@ Occorre selezionare la voce del menu Richiedi Authorization ID e compilare la fo
 
 ### Installazione
 ```
-	PM> Install-Package StudioAT.FatturazioneElettronica.IPA -Version 1.7.3
+	PM> Install-Package StudioAT.FatturazioneElettronica.IPA -Version 1.9.0
 ```
 dalla Console di Gestione Pacchetti di Visual Studio
 

@@ -18,8 +18,10 @@ namespace FatturazioneElettronica.IPA
     using System.Reflection;
     using System.Threading.Tasks;
     using System.Linq;
+    using System.Security.Cryptography;
+
     public abstract class Ws<T> where T : WsJson
-    {      
+    {
         private const string baseUrl = "https://www.indicepa.gov.it:443/ws/";
 
         private readonly IList<KeyValuePair<string, string>> parameters = new List<KeyValuePair<string, string>>();
@@ -76,7 +78,7 @@ namespace FatturazioneElettronica.IPA
         protected string Endpoint { get; set; }
 
         public static T FromJson(string json) => JsonConvert.DeserializeObject<T>(json, Converter.Settings);
-        
+
         protected T Request()
         {
             try
@@ -89,11 +91,11 @@ namespace FatturazioneElettronica.IPA
                 {
                     throw new Exception("Il ws ha restituito una risposta vuota: probabilmente i parametri passati hanno caratteri non consentiti o altri problemi (es. apici da raddoppiare, parametro non formalmente corretto ecc.)");
                 }
-                
+
                 ValidateJsonSchema(json);
 
                 return Ws<T>.FromJson(json);
-                
+
             }
             catch
             {
@@ -127,7 +129,7 @@ namespace FatturazioneElettronica.IPA
 
         protected virtual void ValidateJsonSchema(string json)
         {
-            if (!Ws<T>.ValidateSchema) 
+            if (!Ws<T>.ValidateSchema)
                 return;
             JObject ws = JObject.Parse(json);
             string result = null;

@@ -2,16 +2,16 @@
 <package >
   <metadata>
     <id>$id$</id>
-    <version>1.7.2</version>
+    <version>1.9.0</version>
     <title>Fatturazione elettronica - IPA</title>
     <authors>nicogis</authors>
     <owners>Studio A&amp;T s.r.l.</owners>
-    <licenseUrl>https://github.com/nicogis/FatturazioneElettronica-IPA/blob/master/LICENSE</licenseUrl>
+	<license type="expression">LGPL-3.0-or-later</license>
     <projectUrl>https://nicogis.github.io/FatturazioneElettronica-IPA</projectUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>Client per web services IPA (Indice delle Pubblice Amministrazioni)</description>
-    <releaseNotes>Libreria allineata ai ws della documentazione tecnica versione 1.7 IPA</releaseNotes>
-    <copyright>Copyright 2021</copyright>
+    <releaseNotes>Libreria allineata ai ws della documentazione tecnica versione 1.9 IPA - aggiunto la proprietà CodErrDescription</releaseNotes>
+    <copyright>Copyright 2022</copyright>
     <tags>IPA FatturazioneElettronica nicogis</tags>
   </metadata>
 </package>
