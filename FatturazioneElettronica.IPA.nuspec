@@ -14,8 +14,10 @@
 		<copyright>Copyright 2023</copyright>
 		<tags>IPA FatturazioneElettronica nicogis</tags>
 		<icon>icon.png</icon>
+		<readme>Readme.md</readme>
 	</metadata>
 	<files>
 		<file src="icon.png" target="" />
+		<file src="Readme.md" target="" />
 	</files>
 </package>
