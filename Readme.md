@@ -82,7 +82,7 @@ Occorre selezionare la voce del menu Richiedi Authorization ID e compilare la fo
 		Ws18 vv3 = v3.Request();
 
 		Ws19_AOO v4 = new Ws19_AOO("054", "A3F7393", myAuthId);
-        Ws19 vv4 = v4.Request();
+                Ws19 vv4 = v4.Request();
 	   
 
 ```
