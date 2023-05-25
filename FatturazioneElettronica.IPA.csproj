@@ -67,7 +67,12 @@
     <Compile Include="JsonClass\Ws10.cs" />
     <Compile Include="JsonClass\Ws09.cs" />
     <Compile Include="JsonClass\Ws19.cs" />
+    <Compile Include="JsonClass\Ws20.cs" />
+    <Compile Include="JsonClass\Ws21.cs" />
+    <Compile Include="JsonClass\Ws22.cs" />
+    <Compile Include="JsonClass\Ws23.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ws\Ws21_PEC_ENTE_STOR.cs" />
     <Compile Include="ws\Ws19_AOO.cs" />
     <Compile Include="ws\Ws16_DES_AMM.cs" />
     <Compile Include="ws\Ws15_NSO.cs" />
@@ -88,6 +93,9 @@
     <Compile Include="ws\Ws02_AOO.cs" />
     <Compile Include="ws\Ws09_DOM_DIG_AOO.cs" />
     <Compile Include="ws\Ws18_AOO.cs" />
+    <Compile Include="ws\Ws20_PEC.cs" />
+    <Compile Include="ws\Ws22_PEC_STOR.cs" />
+    <Compile Include="ws\Ws23_DOM_DIG_CF.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitattributes" />
@@ -111,10 +119,17 @@
     <EmbeddedResource Include="JsonSchema\WS16_DES_AMM_SCHEMA.json" />
     <EmbeddedResource Include="JsonSchema\WS18_AOO_SCHEMA.json" />
     <EmbeddedResource Include="JsonSchema\WS19_AOO_SCHEMA.json" />
+    <EmbeddedResource Include="JsonSchema\WS20_PEC_SCHEMA.json" />
+    <EmbeddedResource Include="JsonSchema\WS21_PEC_ENTE_STOR_SCHEMA.json" />
+    <EmbeddedResource Include="JsonSchema\WS22_PEC_STOR_SCHEMA.json" />
+    <EmbeddedResource Include="JsonSchema\WS23_DOM_DIG_CF_SCHEMA.json" />
     <None Include="LICENSE" />
     <None Include="packages.config" />
     <None Include="Readme.md" />
     <None Include="_config.yml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

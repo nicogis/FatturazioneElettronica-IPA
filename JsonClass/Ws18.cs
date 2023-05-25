@@ -1,7 +1,6 @@
 ﻿namespace FatturazioneElettronica.IPA
 {
     using Newtonsoft.Json;
-    using System.Collections.Generic;
 
     /// <summary>
     /// Questo servizio web consente di estrarre dall'iPA informazioni relative ad una Area Organizzativa Omogenea

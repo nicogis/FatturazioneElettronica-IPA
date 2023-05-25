@@ -1,12 +1,6 @@
 ﻿namespace FatturazioneElettronica.IPA
 {
     using Newtonsoft.Json;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Security.Cryptography;
-    using System.Text;
-    using System.Threading.Tasks;
 
     /// <summary>
     /// L'IPA consente la ricerca di informazioni utili relative alle Aree Organizzative Omogenee, 

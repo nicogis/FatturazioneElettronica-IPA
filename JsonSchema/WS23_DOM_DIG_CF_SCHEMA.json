@@ -1,0 +1,111 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://indicepa.gov.it/ipa-files/documenti/WS23_DOM_DIG_CF_SCHEMA.json",
+    "type": "object",
+    "title": "WS23_DOM_DIG_CF",
+    "description": "Schema della response del WS23_DOM_DIG_CF",
+    "default": {},
+    "required": [
+        "result"
+    ],
+    "properties": {
+        "result": {
+            "$id": "#/properties/result",
+            "type": "object",
+            "title": "result schema",
+            "description": "Racchiude parametri intrinsechi alla response",
+            "default": {},
+            "required": [
+                "cod_err",
+                "desc_err",
+                "num_items"
+            ],
+            "properties": {
+                "cod_err": {
+                    "$id": "#/properties/result/properties/cod_err",
+                    "type": "integer",
+                    "title": "cod_err schema",
+                    "description": "Codice d'errore (consultare la tabella dell'indice dei servizi)",
+                    "default": 0
+                },
+                "desc_err": {
+                    "$id": "#/properties/result/properties/desc_err",
+                    "type": "string",
+                    "title": "desc_err schema",
+                    "description": "Descrizione dell'errore corrispondente al codice d'errore",
+                    "default": ""
+                },
+                "num_items": {
+                    "$id": "#/properties/result/properties/num_items",
+                    "type": "integer",
+                    "title": "num_items schema",
+                    "description": "Numero degli elementi presenti in data",
+                    "default": 0
+                }
+            },
+            "additionalProperties": true
+        },
+        "data": {
+            "$id": "#/properties/data",
+            "type": [ "array", "null" ],
+            "title": "data schema",
+            "description": "Contenuto informativo della response",
+            "default": [],            
+            "additionalItems": true,
+            "items": {
+                "$id": "#/properties/data/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/data/items/anyOf/0",
+                        "type": "object",
+                        "default": {},                       
+                        "required": [
+                            "domicilio_digitale",
+                            "tipo",
+                            "cod_amm",
+                            "des_amm"
+                        ],
+                        "properties": {
+                            "domicilio_digitale": {
+                                "$id": "#/properties/data/items/anyOf/0/properties/domicilio_digitale",
+                                "type": "string",
+                                "title": "domicilio_digitale schema",
+                                "description": "PEC o servizio elettronico di recapito certificato qualificato associato ad una AOO",
+                                "default": ""
+                            },
+                            "tipo": {
+                                "$id": "#/properties/data/items/anyOf/0/properties/tipo",
+                                "type": "string",
+                                "title": "tipo schema",
+                                "description": "Tipo domicilio digitale",
+                                "default": ""
+                            },
+                            "cod_amm": {
+                                "$id": "#/properties/data/items/anyOf/0/properties/cod_amm",
+                                "type": "string",
+                                "title": "cod_amm schema",
+                                "description": "Codice dell'Ente come è accreditato sull'iPA",
+                                "default": ""
+                            },
+                            "des_amm": {
+                                "$id": "#/properties/data/items/anyOf/0/properties/des_amm",
+                                "type": "string",
+                                "title": "des_amm schema",
+                                "description": "Descrizione dell'Ente",
+                                "default": ""
+                            }
+                        },
+                        "additionalProperties": true
+                    }
+                ]
+            }
+        }
+    },
+      "if": {
+        "properties": { "result": { "properties": {"num_items" : {"minimum": 1}} } }
+      },
+      "then": {
+        "required": ["data"]
+      },
+    "additionalProperties": true
+}
